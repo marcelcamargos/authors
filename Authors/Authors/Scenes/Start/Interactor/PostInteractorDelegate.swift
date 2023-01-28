@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostInteractorDelegate: AnyObject {
-    func fetchData()
+    func fetchPosts()
 }

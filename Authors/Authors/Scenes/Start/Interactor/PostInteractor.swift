@@ -25,7 +25,7 @@ class PostInteractor {
 // MARK: - LoginInteractor
 
 extension PostInteractor: PostInteractorDelegate {
-    func fetchData() {
+    func fetchPosts() {
         postWorker.getPostList { (posts) in
 
             let interactorToPresenter = PostModel.Response(posts: posts)

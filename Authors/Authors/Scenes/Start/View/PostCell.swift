@@ -12,7 +12,6 @@ final class PostCell: UITableViewCell {
     public lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.lineBreakMode = .byTruncatingTail
         nameLabel.numberOfLines = 0
         return nameLabel
     }()

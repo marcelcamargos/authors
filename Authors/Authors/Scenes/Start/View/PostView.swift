@@ -19,8 +19,6 @@ class PostView: UIView {
         tableView.delegate = self
         tableView.separatorInset = .zero
         tableView.allowsSelection = true
-        //tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
         return tableView
     }()
     

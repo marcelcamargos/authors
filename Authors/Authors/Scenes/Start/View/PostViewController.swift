@@ -38,19 +38,11 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         interactor?.fetchData()
     }
-    
-    func extactToList(posts: [Post]) -> [String] {
-        var innerPosts: [String] = []
-        for post in posts {
-            innerPosts.append(post.title)
-        }
-        return innerPosts
-    }
 }
 
 extension PostViewController: PostViewControllerDelegate {
     func presenter(didSuccessShowPost presenterToView: PostModel.ViewModel) {
-        displayedItems = extactToList(posts: presenterToView.items)
+        displayedItems = Extracter.shared.extactToList(posts: presenterToView.items)
     }
     
     func presenter(didFailShowPost message: String) {

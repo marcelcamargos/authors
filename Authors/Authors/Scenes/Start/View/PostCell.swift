@@ -10,8 +10,10 @@ import UIKit
 final class PostCell: UITableViewCell {
 
     public lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel(frame: .zero)
+        let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.lineBreakMode = .byTruncatingTail
+        nameLabel.numberOfLines = 0
         return nameLabel
     }()
 
@@ -20,6 +22,7 @@ final class PostCell: UITableViewCell {
         self.addSubview(nameLabel)
 
         nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }

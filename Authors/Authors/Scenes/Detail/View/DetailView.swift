@@ -14,6 +14,7 @@ class DetailView: UIView {
         uiLabel.textColor = .black
         uiLabel.textAlignment = .center
         uiLabel.font = uiLabel.font.withSize(30)
+        uiLabel.numberOfLines = 0
         return uiLabel
     }()
 
@@ -23,6 +24,7 @@ class DetailView: UIView {
         uiLabel.textColor = .black
         uiLabel.textAlignment = .center
         uiLabel.font = uiLabel.font.withSize(24)
+        uiLabel.numberOfLines = 0
         return uiLabel
     }()
     
@@ -32,6 +34,7 @@ class DetailView: UIView {
         uiLabel.textColor = .black
         uiLabel.textAlignment = .center
         uiLabel.font = uiLabel.font.withSize(16)
+        uiLabel.numberOfLines = 0
         return uiLabel
     }()
     
@@ -39,7 +42,7 @@ class DetailView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 50
+        stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

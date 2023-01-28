@@ -20,13 +20,13 @@ enum PostModel {
     ///interactor -> presenter
 
     struct Response {
-        var items: [String]
+        var posts: [Post]
     }
 
     //MARK: ViewModel
     ///presenter -> view
 
     struct ViewModel {
-        var items: [String]
+        var items: [Post]
     }
 }

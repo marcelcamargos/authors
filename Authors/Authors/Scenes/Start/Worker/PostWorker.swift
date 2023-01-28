@@ -7,7 +7,7 @@
 
 class PostWorker1: PostWorkerDelegate1 {
     
-    func getItemsList(success: @escaping ([String]) -> (), fail:@escaping (String) -> ()) {
+    func getPostList(success: @escaping ([Post]) -> (), fail:@escaping (String) -> ()) {
         let service = PostItemsService()
         
         service.getSimpleListOfItems { (items) in

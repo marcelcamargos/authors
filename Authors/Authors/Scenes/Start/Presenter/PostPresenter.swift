@@ -24,7 +24,7 @@ class PostPresenter {
 
 extension PostPresenter: PostPresenterDelegate {
     func interactor(didSuccessShowPost response: PostModel.Response) {
-        let presenterToView = PostModel.ViewModel(items: response.items)
+        let presenterToView = PostModel.ViewModel(items: response.posts)
         
         viewController?.presenter(didSuccessShowPost: presenterToView)
     }

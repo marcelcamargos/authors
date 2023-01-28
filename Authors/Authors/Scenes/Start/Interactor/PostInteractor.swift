@@ -26,9 +26,9 @@ class PostInteractor {
 
 extension PostInteractor: PostInteractorDelegate {
     func fetchData() {
-        postWorker.getItemsList { (items) in
+        postWorker.getPostList { (posts) in
 
-            let interactorToPresenter = PostModel.Response(items: items)
+            let interactorToPresenter = PostModel.Response(posts: posts)
             self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
         } fail: { (message) in
             self.presenter?.interactor(didFailShowPost: message)

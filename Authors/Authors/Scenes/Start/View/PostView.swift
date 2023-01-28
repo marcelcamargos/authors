@@ -13,12 +13,14 @@ class PostView: UIView {
     weak var delegate: PostViewDelegate?
     
     public lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorInset = .zero
         tableView.allowsSelection = true
+        //tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         return tableView
     }()
     

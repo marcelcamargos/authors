@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostWorkerDelegate1 {
-    func getItemsList(success: @escaping ([String]) -> (), fail:@escaping (String) -> ())
+    func getPostList(success: @escaping ([Post]) -> (), fail:@escaping (String) -> ())
 }

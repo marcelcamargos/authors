@@ -5,4 +5,70 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
-import Foundation
+import UIKit
+
+class DetailView: UIView {
+    public lazy var titleLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .center
+        uiLabel.font = uiLabel.font.withSize(30)
+        return uiLabel
+    }()
+
+    public lazy var shortDescriptionLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .center
+        uiLabel.font = uiLabel.font.withSize(24)
+        return uiLabel
+    }()
+    
+    public lazy var longDescriptionLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .center
+        uiLabel.font = uiLabel.font.withSize(16)
+        return uiLabel
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 50
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .white
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+}
+
+extension DetailView: ViewCodable {
+    func buildHierarchy() {
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(shortDescriptionLabel)
+        stackView.addArrangedSubview(longDescriptionLabel)
+        addSubview(stackView)
+    }
+  
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
+    }
+}

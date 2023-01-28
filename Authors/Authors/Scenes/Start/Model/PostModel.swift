@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+enum PostModel {
+
+    //MARK: Request
+    ///view -> interactor
+
+    struct Request {
+
+    }
+
+    //MARK: Response
+    ///interactor -> presenter
+
+    struct Response {
+        var items: [String]
+    }
+
+    //MARK: ViewModel
+    ///presenter -> view
+
+    struct ViewModel {
+        var items: [String]
+    }
+}

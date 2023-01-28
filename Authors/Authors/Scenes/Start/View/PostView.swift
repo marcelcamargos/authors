@@ -5,4 +5,69 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
-import Foundation
+import UIKit
+
+class PostView: UIView {
+    var values: [String] = []
+    
+    weak var delegate: PostViewDelegate?
+    
+    public lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorInset = .zero
+        tableView.allowsSelection = true
+        return tableView
+    }()
+    
+    init(delegate: PostViewDelegate) {
+        super.init(frame: .zero)
+        backgroundColor = .white
+        self.delegate = delegate
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+}
+
+extension PostView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(tableView)
+    }
+  
+    func setupConstraints() {
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive  = true
+    }
+}
+
+extension PostView: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            delegate?.didClickFirstItem()
+        }
+    }
+}
+
+extension PostView: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return values.count
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = PostCell()
+        cell.nameLabel.text = values[indexPath.row]
+        cell.setUpCell()
+        return cell
+    }
+}

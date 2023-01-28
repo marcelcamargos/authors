@@ -6,3 +6,32 @@
 //
 
 import Foundation
+
+class PostInteractor {
+
+    // MARK: - Private Properties
+
+    private var presenter: PostPresenterDelegate?
+    private var postWorker: PostWorkerDelegate1
+    
+    // MARK: - Init
+    
+    init(_ presenter: PostPresenterDelegate?, _ postWorker: PostWorkerDelegate1 = PostWorker1()) {
+        self.presenter = presenter
+        self.postWorker = postWorker
+    }
+}
+
+// MARK: - LoginInteractor
+
+extension PostInteractor: PostInteractorDelegate {
+    func fetchData() {
+        postWorker.getItemsList { (items) in
+
+            let interactorToPresenter = PostModel.Response(items: items)
+            self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
+        } fail: { (message) in
+            self.presenter?.interactor(didFailShowPost: message)
+        }
+    }
+}

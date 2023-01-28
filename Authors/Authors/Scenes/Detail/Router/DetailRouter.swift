@@ -5,4 +5,10 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
-import Foundation
+import UIKit
+
+class DetailRouter: DetailInternalRouterDelegate {
+    
+    weak var viewController: UIViewController?
+
+}

@@ -31,6 +31,22 @@
 		101CE1DA29857A5800B7A9FC /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1D929857A5800B7A9FC /* DetailPresenter.swift */; };
 		101CE1DC29857A6300B7A9FC /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1DB29857A6300B7A9FC /* DetailInteractor.swift */; };
 		101CE1DE29857A6C00B7A9FC /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1DD29857A6C00B7A9FC /* DetailRouter.swift */; };
+		101CE1E0298591D400B7A9FC /* PostPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1DF298591D400B7A9FC /* PostPresenterDelegate.swift */; };
+		101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E12985926600B7A9FC /* PostInteractorDelegate.swift */; };
+		101CE1E6298593D800B7A9FC /* PostInternalRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E5298593D800B7A9FC /* PostInternalRouterDelegate.swift */; };
+		101CE1E82985953500B7A9FC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E72985953500B7A9FC /* PostCell.swift */; };
+		101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */; };
+		101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */; };
+		101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */; };
+		101CE1F02985966700B7A9FC /* PostItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EF2985966700B7A9FC /* PostItemsService.swift */; };
+		101CE1F22985969E00B7A9FC /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F12985969E00B7A9FC /* DetailService.swift */; };
+		101CE1F4298596D100B7A9FC /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F3298596D100B7A9FC /* Detail.swift */; };
+		101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */; };
+		101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F729859F5E00B7A9FC /* DetailViewController.swift */; };
+		101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F929859FCC00B7A9FC /* DetailViewControllerDelegate.swift */; };
+		101CE1FC2985A13F00B7A9FC /* DetailInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FB2985A13F00B7A9FC /* DetailInteractorDelegate.swift */; };
+		101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */; };
+		101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +96,22 @@
 		101CE1D929857A5800B7A9FC /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		101CE1DB29857A6300B7A9FC /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		101CE1DD29857A6C00B7A9FC /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		101CE1DF298591D400B7A9FC /* PostPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenterDelegate.swift; sourceTree = "<group>"; };
+		101CE1E12985926600B7A9FC /* PostInteractorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorDelegate.swift; sourceTree = "<group>"; };
+		101CE1E5298593D800B7A9FC /* PostInternalRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInternalRouterDelegate.swift; sourceTree = "<group>"; };
+		101CE1E72985953500B7A9FC /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerDelegate.swift; sourceTree = "<group>"; };
+		101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
+		101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkerDelegate1.swift; sourceTree = "<group>"; };
+		101CE1EF2985966700B7A9FC /* PostItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemsService.swift; sourceTree = "<group>"; };
+		101CE1F12985969E00B7A9FC /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		101CE1F3298596D100B7A9FC /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterDelegate.swift; sourceTree = "<group>"; };
+		101CE1F729859F5E00B7A9FC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		101CE1F929859FCC00B7A9FC /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
+		101CE1FB2985A13F00B7A9FC /* DetailInteractorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorDelegate.swift; sourceTree = "<group>"; };
+		101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInternalRouterDelegate.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1CD298579EE00B7A9FC /* PostPresenter.swift */,
+				101CE1DF298591D400B7A9FC /* PostPresenterDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -231,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1CB298579E400B7A9FC /* PostInteractor.swift */,
+				101CE1E12985926600B7A9FC /* PostInteractorDelegate.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -239,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1C9298579D700B7A9FC /* PostRouter.swift */,
+				101CE1E5298593D800B7A9FC /* PostInternalRouterDelegate.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -248,6 +283,9 @@
 			children = (
 				101CE1C7298579C600B7A9FC /* PostView.swift */,
 				101CE1CF29857A0600B7A9FC /* PostViewController.swift */,
+				101CE1E72985953500B7A9FC /* PostCell.swift */,
+				101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */,
+				101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1C3298579AA00B7A9FC /* PostWorker.swift */,
+				101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -279,6 +318,8 @@
 		101CE1B6298578FE00B7A9FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				101CE1EF2985966700B7A9FC /* PostItemsService.swift */,
+				101CE1F12985969E00B7A9FC /* DetailService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -286,6 +327,7 @@
 		101CE1B72985790300B7A9FC /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				101CE1F3298596D100B7A9FC /* Detail.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -302,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1D329857A2000B7A9FC /* DetailWorker.swift */,
+				101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -318,6 +361,8 @@
 			isa = PBXGroup;
 			children = (
 				101CE1D729857A3500B7A9FC /* DetailView.swift */,
+				101CE1F729859F5E00B7A9FC /* DetailViewController.swift */,
+				101CE1F929859FCC00B7A9FC /* DetailViewControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1D929857A5800B7A9FC /* DetailPresenter.swift */,
+				101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -334,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1DB29857A6300B7A9FC /* DetailInteractor.swift */,
+				101CE1FB2985A13F00B7A9FC /* DetailInteractorDelegate.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -342,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1DD29857A6C00B7A9FC /* DetailRouter.swift */,
+				101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -571,22 +619,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */,
 				101CE1D229857A1400B7A9FC /* DetailModel.swift in Sources */,
+				101CE1FC2985A13F00B7A9FC /* DetailInteractorDelegate.swift in Sources */,
 				101CE1CE298579EE00B7A9FC /* PostPresenter.swift in Sources */,
 				101CE1C8298579C600B7A9FC /* PostView.swift in Sources */,
+				101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */,
 				101CE1C6298579BB00B7A9FC /* PostConfigurator.swift in Sources */,
 				101CE1D429857A2000B7A9FC /* DetailWorker.swift in Sources */,
+				101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */,
 				101CE1CA298579D700B7A9FC /* PostRouter.swift in Sources */,
 				101CE1792985754600B7A9FC /* AppDelegate.swift in Sources */,
 				101CE1C22985799B00B7A9FC /* PostModel.swift in Sources */,
+				101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */,
 				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,
+				101CE1F22985969E00B7A9FC /* DetailService.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
+				101CE1E0298591D400B7A9FC /* PostPresenterDelegate.swift in Sources */,
+				101CE1F02985966700B7A9FC /* PostItemsService.swift in Sources */,
+				101CE1E6298593D800B7A9FC /* PostInternalRouterDelegate.swift in Sources */,
 				101CE1DA29857A5800B7A9FC /* DetailPresenter.swift in Sources */,
 				101CE17B2985754600B7A9FC /* SceneDelegate.swift in Sources */,
 				101CE1DC29857A6300B7A9FC /* DetailInteractor.swift in Sources */,
+				101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */,
+				101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */,
 				101CE1AA2985782900B7A9FC /* ViewCodable.swift in Sources */,
+				101CE1F4298596D100B7A9FC /* Detail.swift in Sources */,
+				101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */,
 				101CE1DE29857A6C00B7A9FC /* DetailRouter.swift in Sources */,
+				101CE1E82985953500B7A9FC /* PostCell.swift in Sources */,
+				101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */,
+				101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */,
 				101CE1D829857A3500B7A9FC /* DetailView.swift in Sources */,
 				101CE1D029857A0600B7A9FC /* PostViewController.swift in Sources */,
 			);

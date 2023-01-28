@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailView: UIView {
-    public lazy var titleLabel: UILabel = {
+    public lazy var postTitleLabel: UILabel = {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
@@ -18,7 +18,7 @@ class DetailView: UIView {
         return uiLabel
     }()
 
-    public lazy var shortDescriptionLabel: UILabel = {
+    public lazy var postDescriptionLabel: UILabel = {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
@@ -60,8 +60,8 @@ class DetailView: UIView {
 
 extension DetailView: ViewCodable {
     func buildHierarchy() {
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(shortDescriptionLabel)
+        stackView.addArrangedSubview(postTitleLabel)
+        stackView.addArrangedSubview(postDescriptionLabel)
         stackView.addArrangedSubview(longDescriptionLabel)
         addSubview(stackView)
     }

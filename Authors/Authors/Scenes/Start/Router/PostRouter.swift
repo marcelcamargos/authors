@@ -7,14 +7,14 @@
 
 import UIKit
 
-// MARK: MenuFirstScreenRouter
+// MARK: PostRouter
 
 class PostRouter: PostInternalRouterDelegate {
 
     weak var viewController: UIViewController?
     
-    func showDetail() {
-        let detailViewController = DetailViewController()
+    func showDetail(selectedPost: Post) {
+        let detailViewController = DetailViewController(selectedPost: selectedPost)
         DetailConfigurator.configure(viewController: detailViewController)
         viewController?.navigationController?.pushViewController(detailViewController, animated: true)
     }

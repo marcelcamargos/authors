@@ -11,9 +11,11 @@ class DetailViewController: UIViewController {
     lazy var contentView = DetailView()
     var interactor: DetailInteractorDelegate?
     var router: DetailInternalRouterDelegate?
+    var selectedPost: Post?
     
-    init() {
+    init(selectedPost: Post) {
         super.init(nibName: nil, bundle: nil)
+        self.selectedPost = selectedPost
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,8 +34,8 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didSuccessShowDetail presenterToView: DetailModel.ViewModel) {
-        contentView.titleLabel.text = presenterToView.title
-        contentView.shortDescriptionLabel.text = presenterToView.shortDescription
+        contentView.postTitleLabel.text = selectedPost?.title
+        contentView.postDescriptionLabel.text = selectedPost?.body
         contentView.longDescriptionLabel.text = presenterToView.longDescription
     }
     

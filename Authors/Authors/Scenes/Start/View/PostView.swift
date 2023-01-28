@@ -8,7 +8,7 @@
 import UIKit
 
 class PostView: UIView {
-    var values: [String] = []
+    var values: [Post] = []
     
     weak var delegate: PostViewDelegate?
     
@@ -30,7 +30,7 @@ class PostView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
 }
 
@@ -38,7 +38,7 @@ extension PostView: ViewCodable {
     func buildHierarchy() {
         addSubview(tableView)
     }
-  
+    
     func setupConstraints() {
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -49,9 +49,7 @@ extension PostView: ViewCodable {
 
 extension PostView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            delegate?.didClickFirstItem()
-        }
+        delegate?.didClickItem(selectedPost: values[indexPath.row])
     }
 }
 
@@ -63,10 +61,10 @@ extension PostView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return values.count
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = PostCell()
-        cell.nameLabel.text = values[indexPath.row]
+        cell.nameLabel.text = Extracter.shared.extactToList(posts: values)[indexPath.row]
         cell.setUpCell()
         return cell
     }

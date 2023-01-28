@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostInternalRouterDelegate: AnyObject {
-    func showDetail()
+    func showDetail(selectedPost: Post)
 }

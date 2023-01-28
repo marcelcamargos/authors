@@ -22,7 +22,7 @@ class PostInteractor {
     }
 }
 
-// MARK: - LoginInteractor
+// MARK: - PostInteractor
 
 extension PostInteractor: PostInteractorDelegate {
     func fetchPosts() {

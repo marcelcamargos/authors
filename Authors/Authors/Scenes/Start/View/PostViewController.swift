@@ -13,7 +13,7 @@ class PostViewController: UIViewController {
     private var errorMessage: String = ""
     private var contentView: PostView?
     
-    var displayedItems: [String] = [] {
+    var displayedItems: [Post] = [] {
         didSet {
             contentView?.values = displayedItems
             contentView?.tableView.reloadData()
@@ -42,7 +42,7 @@ class PostViewController: UIViewController {
 
 extension PostViewController: PostViewControllerDelegate {
     func presenter(didSuccessShowPost presenterToView: PostModel.ViewModel) {
-        displayedItems = Extracter.shared.extactToList(posts: presenterToView.items)
+        displayedItems = presenterToView.items
     }
     
     func presenter(didFailShowPost message: String) {
@@ -51,7 +51,7 @@ extension PostViewController: PostViewControllerDelegate {
 }
 
 extension PostViewController: PostViewDelegate {
-    func didClickFirstItem() {
-        router?.showDetail()
+    func didClickItem(selectedPost: Post) {
+        router?.showDetail(selectedPost: selectedPost)
     }
 }

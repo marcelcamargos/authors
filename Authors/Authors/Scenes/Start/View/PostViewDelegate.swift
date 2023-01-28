@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostViewDelegate: AnyObject {
-    func didClickFirstItem()
+    func didClickItem(selectedPost: Post)
 }

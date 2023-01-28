@@ -34,9 +34,8 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didSuccessShowDetail presenterToView: DetailModel.ViewModel) {
-        contentView.postTitleLabel.text = selectedPost?.title
-        contentView.postDescriptionLabel.text = selectedPost?.body
-        contentView.longDescriptionLabel.text = presenterToView.longDescription
+        contentView.postTitleContentLabel.text = selectedPost?.title
+        contentView.postDescriptionContentLabel.text = selectedPost?.body
     }
     
     func presenter(didFailShowDetail message: String) {

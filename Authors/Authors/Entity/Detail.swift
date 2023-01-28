@@ -9,6 +9,5 @@ import Foundation
 
 struct Detail {
     let title: String
-    let shortDescription: String
-    let longDescription: String
+    let description: String
 }

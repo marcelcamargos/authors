@@ -12,8 +12,18 @@ class DetailView: UIView {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
-        uiLabel.textAlignment = .center
-        uiLabel.font = uiLabel.font.withSize(30)
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        uiLabel.text = "Post Title"
+        return uiLabel
+    }()
+    
+    public lazy var postTitleContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(20)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
@@ -22,8 +32,18 @@ class DetailView: UIView {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
-        uiLabel.textAlignment = .center
-        uiLabel.font = uiLabel.font.withSize(24)
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        uiLabel.text = "Post Description"
+        return uiLabel
+    }()
+    
+    public lazy var postDescriptionContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(20)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
@@ -32,8 +52,8 @@ class DetailView: UIView {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
-        uiLabel.textAlignment = .center
-        uiLabel.font = uiLabel.font.withSize(16)
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(20)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
@@ -41,7 +61,6 @@ class DetailView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -61,7 +80,9 @@ class DetailView: UIView {
 extension DetailView: ViewCodable {
     func buildHierarchy() {
         stackView.addArrangedSubview(postTitleLabel)
+        stackView.addArrangedSubview(postTitleContentLabel)
         stackView.addArrangedSubview(postDescriptionLabel)
+        stackView.addArrangedSubview(postDescriptionContentLabel)
         stackView.addArrangedSubview(longDescriptionLabel)
         addSubview(stackView)
     }

@@ -29,6 +29,5 @@ enum DetailModel {
     struct ViewModel {
         let title: String
         let shortDescription: String
-        let longDescription: String
     }
 }

@@ -28,8 +28,7 @@ extension DetailPresenter: DetailPresenterDelegate {
         let news = response.detail
         
         let presenterToView = DetailModel.ViewModel(title: news.title,
-                                                        shortDescription: news.shortDescription,
-                                                        longDescription: news.longDescription)
+                                                        shortDescription: news.description)
         
         viewController?.presenter(didSuccessShowDetail: presenterToView)
     }

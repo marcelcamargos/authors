@@ -13,7 +13,7 @@ protocol DetailServiceDelegate: AnyObject {
 
 class DetailService: DetailServiceDelegate {
     func getDetail(success: @escaping (Detail) -> (), fail: @escaping (String) -> ()) {
-        let detail = Detail(title: "dolorum ut in voluptas mollitia et saepe quo animi", shortDescription: "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam", longDescription: "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam")
+        let detail = Detail(title: "dolorum ut in voluptas mollitia et saepe quo animi", description: "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam")
         success(detail)
     }
 }

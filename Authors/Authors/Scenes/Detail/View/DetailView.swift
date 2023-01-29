@@ -13,7 +13,7 @@ class DetailView: UIView {
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
         uiLabel.textAlignment = .left
-        uiLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
         uiLabel.text = "Post Title"
         return uiLabel
     }()
@@ -23,7 +23,7 @@ class DetailView: UIView {
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
         uiLabel.textAlignment = .left
-        uiLabel.font = uiLabel.font.withSize(20)
+        uiLabel.font = uiLabel.font.withSize(12)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
@@ -33,7 +33,7 @@ class DetailView: UIView {
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
         uiLabel.textAlignment = .left
-        uiLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
         uiLabel.text = "Post Description"
         return uiLabel
     }()
@@ -43,17 +43,87 @@ class DetailView: UIView {
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
         uiLabel.textAlignment = .left
-        uiLabel.font = uiLabel.font.withSize(20)
+        uiLabel.font = uiLabel.font.withSize(12)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
     
-    public lazy var longDescriptionLabel: UILabel = {
+    public lazy var authorNameLabel: UILabel = {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
         uiLabel.textColor = .black
         uiLabel.textAlignment = .left
-        uiLabel.font = uiLabel.font.withSize(20)
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        uiLabel.text = "Author Name"
+        return uiLabel
+    }()
+    
+    public lazy var authorNameContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(12)
+        uiLabel.numberOfLines = 0
+        return uiLabel
+    }()
+    
+    public lazy var authorEmailLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        uiLabel.text = "Author Email"
+        return uiLabel
+    }()
+    
+    public lazy var authorEmailContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(12)
+        uiLabel.numberOfLines = 0
+        return uiLabel
+    }()
+    
+    public lazy var authorPhoneLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        uiLabel.text = "Author Phone"
+        return uiLabel
+    }()
+    
+    public lazy var authorPhoneContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(12)
+        uiLabel.numberOfLines = 0
+        return uiLabel
+    }()
+    
+    public lazy var authorAddressLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        uiLabel.text = "Author Address"
+        return uiLabel
+    }()
+    
+    public lazy var authorAddressContentLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = uiLabel.font.withSize(12)
         uiLabel.numberOfLines = 0
         return uiLabel
     }()
@@ -61,7 +131,7 @@ class DetailView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -83,16 +153,21 @@ extension DetailView: ViewCodable {
         stackView.addArrangedSubview(postTitleContentLabel)
         stackView.addArrangedSubview(postDescriptionLabel)
         stackView.addArrangedSubview(postDescriptionContentLabel)
-        stackView.addArrangedSubview(longDescriptionLabel)
+        stackView.addArrangedSubview(authorNameLabel)
+        stackView.addArrangedSubview(authorNameContentLabel)
+        stackView.addArrangedSubview(authorEmailLabel)
+        stackView.addArrangedSubview(authorEmailContentLabel)
+        stackView.addArrangedSubview(authorPhoneLabel)
+        stackView.addArrangedSubview(authorPhoneContentLabel)
+        stackView.addArrangedSubview(authorAddressLabel)
+        stackView.addArrangedSubview(authorAddressContentLabel)
+
         addSubview(stackView)
     }
   
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-        ])
+        stackView.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
     }
 }

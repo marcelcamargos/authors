@@ -8,12 +8,37 @@
 import Foundation
 
 protocol DetailServiceDelegate: AnyObject {
-    func getDetail(success: @escaping (Detail) -> (), fail: @escaping (String) -> ())
+    func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ())
+    //func getSimpleListOfItems(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
 }
 
 class DetailService: DetailServiceDelegate {
-    func getDetail(success: @escaping (Detail) -> (), fail: @escaping (String) -> ()) {
-        let detail = Detail(title: "dolorum ut in voluptas mollitia et saepe quo animi", description: "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam")
-        success(detail)
+    private var posts: [Post]?
+    
+    func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {
+        let url = URL(string: "https://jsonplaceholder.typicode.com/users")
+        
+        guard let url = url else { return }
+        
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            if let error = error {
+                fail("Error with fetching users: \(error)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                fail("Error with the response, unexpected status code: \(String(describing: response))")
+                return
+            }
+            
+            if let data = data,
+               let users = try? JSONDecoder().decode([User].self, from: data) {
+                DispatchQueue.main.async {
+                    success(users)
+                }
+            }
+        })
+        task.resume()
     }
 }

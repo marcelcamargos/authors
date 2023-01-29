@@ -25,10 +25,7 @@ class DetailPresenter {
 extension DetailPresenter: DetailPresenterDelegate {
     
     func interactor(didSuccessShowDetail response: DetailModel.Response) {
-        let news = response.detail
-        
-        let presenterToView = DetailModel.ViewModel(title: news.title,
-                                                        shortDescription: news.description)
+        let presenterToView = DetailModel.ViewModel(users: response.users)
         
         viewController?.presenter(didSuccessShowDetail: presenterToView)
     }

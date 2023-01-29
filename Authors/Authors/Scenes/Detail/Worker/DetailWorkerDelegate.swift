@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailWorkerDelegate {
-    func getDetail(success: @escaping (Detail) -> (), fail:@escaping (String) -> ())
+    func getDetail(success: @escaping ([User]) -> (), fail:@escaping (String) -> ())
 }

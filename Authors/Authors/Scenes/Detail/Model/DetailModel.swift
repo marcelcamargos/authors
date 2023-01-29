@@ -20,14 +20,13 @@ enum DetailModel {
     ///interactor -> presenter
 
     struct Response {
-        var detail: Detail
+        let users: [User]
     }
 
     //MARK: ViewModel
     ///presenter -> view
 
     struct ViewModel {
-        let title: String
-        let shortDescription: String
+        let users: [User]
     }
 }

@@ -49,7 +49,10 @@
 		101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */; };
 		101CE2022985CAAA00B7A9FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2012985CAA900B7A9FC /* Post.swift */; };
 		101CE2042985DA4100B7A9FC /* Extracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2032985DA4100B7A9FC /* Extracter.swift */; };
-		101CE2062985F41900B7A9FC /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2052985F41900B7A9FC /* Loader.swift */; };
+		101CE2082985FBA400B7A9FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2072985FBA400B7A9FC /* User.swift */; };
+		101CE20A2985FC0800B7A9FC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2092985FC0800B7A9FC /* Address.swift */; };
+		101CE20C2985FC3200B7A9FC /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE20B2985FC3200B7A9FC /* Geo.swift */; };
+		101CE20E2985FC6800B7A9FC /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE20D2985FC6800B7A9FC /* Company.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -117,7 +120,10 @@
 		101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInternalRouterDelegate.swift; sourceTree = "<group>"; };
 		101CE2012985CAA900B7A9FC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		101CE2032985DA4100B7A9FC /* Extracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extracter.swift; sourceTree = "<group>"; };
-		101CE2052985F41900B7A9FC /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		101CE2072985FBA400B7A9FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		101CE2092985FC0800B7A9FC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		101CE20B2985FC3200B7A9FC /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
+		101CE20D2985FC6800B7A9FC /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				101CE1A92985782900B7A9FC /* ViewCodable.swift */,
-				101CE2052985F41900B7A9FC /* Loader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -337,6 +342,10 @@
 			children = (
 				101CE1F3298596D100B7A9FC /* Detail.swift */,
 				101CE2012985CAA900B7A9FC /* Post.swift */,
+				101CE2072985FBA400B7A9FC /* User.swift */,
+				101CE2092985FC0800B7A9FC /* Address.swift */,
+				101CE20B2985FC3200B7A9FC /* Geo.swift */,
+				101CE20D2985FC6800B7A9FC /* Company.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -643,9 +652,12 @@
 				101CE2042985DA4100B7A9FC /* Extracter.swift in Sources */,
 				101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */,
 				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
+				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,
 				101CE1F22985969E00B7A9FC /* DetailService.swift in Sources */,
+				101CE20E2985FC6800B7A9FC /* Company.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
+				101CE2082985FBA400B7A9FC /* User.swift in Sources */,
 				101CE1E0298591D400B7A9FC /* PostPresenterDelegate.swift in Sources */,
 				101CE1F02985966700B7A9FC /* PostItemsService.swift in Sources */,
 				101CE2022985CAAA00B7A9FC /* Post.swift in Sources */,
@@ -662,9 +674,9 @@
 				101CE1E82985953500B7A9FC /* PostCell.swift in Sources */,
 				101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */,
 				101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */,
-				101CE2062985F41900B7A9FC /* Loader.swift in Sources */,
 				101CE1D829857A3500B7A9FC /* DetailView.swift in Sources */,
 				101CE1D029857A0600B7A9FC /* PostViewController.swift in Sources */,
+				101CE20C2985FC3200B7A9FC /* Geo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,15 +26,11 @@ class PostInteractor {
 
 extension PostInteractor: PostInteractorDelegate {
     func fetchPosts(uiViewController: UIViewController) {
-        let loader = Loader(uiViewController: uiViewController)
-        loader.startLoading()
         postWorker.getPostList { [weak self] (posts) in
             let interactorToPresenter = PostModel.Response(posts: posts)
             self?.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
-            loader.stopLoading()
         } fail: { (message) in
             self.presenter?.interactor(didFailShowPost: message)
-            loader.stopLoading()
         }
     }
 }

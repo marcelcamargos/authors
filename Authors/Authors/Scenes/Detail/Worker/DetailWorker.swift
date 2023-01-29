@@ -9,10 +9,10 @@ import Foundation
 
 class DetailWorker: DetailWorkerDelegate {
     
-    func getDetail(success: @escaping (Detail) -> (), fail: @escaping (String) -> ()) {
+    func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {
         let service = DetailService()
-        service.getDetail { (detail) in
-            success(detail)
+        service.getDetail { (users) in
+            success(users)
         } fail: { (message) in
             fail(message)
         }

@@ -8,13 +8,13 @@
 import Foundation
 
 protocol PostServiceDatasource: AnyObject {
-    func getSimpleListOfItems(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
+    func getPosts(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
 }
 
 class PostService: PostServiceDatasource {
     private var posts: [Post]?
     
-    func getSimpleListOfItems(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
+    func getPosts(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")
         
         guard let url = url else { return }

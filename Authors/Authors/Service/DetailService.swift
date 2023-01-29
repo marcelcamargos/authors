@@ -9,7 +9,6 @@ import Foundation
 
 protocol DetailServiceDelegate: AnyObject {
     func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ())
-    //func getSimpleListOfItems(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
 }
 
 class DetailService: DetailServiceDelegate {

@@ -5,7 +5,7 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
-import Foundation
+import UIKit
 
 class PostInteractor {
 
@@ -25,13 +25,16 @@ class PostInteractor {
 // MARK: - PostInteractor
 
 extension PostInteractor: PostInteractorDelegate {
-    func fetchPosts() {
-        postWorker.getPostList { (posts) in
-
+    func fetchPosts(uiViewController: UIViewController) {
+        let loader = Loader(uiViewController: uiViewController)
+        loader.startLoading()
+        postWorker.getPostList { [weak self] (posts) in
             let interactorToPresenter = PostModel.Response(posts: posts)
-            self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
+            self?.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
+            loader.stopLoading()
         } fail: { (message) in
             self.presenter?.interactor(didFailShowPost: message)
+            loader.stopLoading()
         }
     }
 }

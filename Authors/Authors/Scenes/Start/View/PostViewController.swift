@@ -36,7 +36,7 @@ class PostViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchPosts()
+        interactor?.fetchPosts(uiViewController: self)
     }
 }
 

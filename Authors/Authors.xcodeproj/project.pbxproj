@@ -49,6 +49,7 @@
 		101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */; };
 		101CE2022985CAAA00B7A9FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2012985CAA900B7A9FC /* Post.swift */; };
 		101CE2042985DA4100B7A9FC /* Extracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2032985DA4100B7A9FC /* Extracter.swift */; };
+		101CE2062985F41900B7A9FC /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2052985F41900B7A9FC /* Loader.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +117,7 @@
 		101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInternalRouterDelegate.swift; sourceTree = "<group>"; };
 		101CE2012985CAA900B7A9FC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		101CE2032985DA4100B7A9FC /* Extracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extracter.swift; sourceTree = "<group>"; };
+		101CE2052985F41900B7A9FC /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1A92985782900B7A9FC /* ViewCodable.swift */,
+				101CE2052985F41900B7A9FC /* Loader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				101CE1E82985953500B7A9FC /* PostCell.swift in Sources */,
 				101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */,
 				101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */,
+				101CE2062985F41900B7A9FC /* Loader.swift in Sources */,
 				101CE1D829857A3500B7A9FC /* DetailView.swift in Sources */,
 				101CE1D029857A0600B7A9FC /* PostViewController.swift in Sources */,
 			);

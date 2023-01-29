@@ -12,13 +12,15 @@ class DetailInteractor {
     private var presenter: DetailPresenterDelegate
     private var detailWorker: DetailWorkerDelegate
     private var commentWorker: CommentWorkerDelegate
+    private var postDeletionWorker: PostDeletionWorkerDelegate
     
     // MARK: - Init
     
-    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker()) {
+    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker()) {
         self.presenter = presenter
         self.detailWorker = detailWorker
         self.commentWorker = commentWorker
+        self.postDeletionWorker = postDeletionWorker
     }
 }
 
@@ -35,6 +37,15 @@ extension DetailInteractor: DetailInteractorDelegate {
             }
         } fail: { (message) in
             self.presenter.interactor(didFailShowDetail: message)
+        }
+    }
+    
+    func processDelete(request: DeletionModel.Request) {
+        postDeletionWorker.deletePost(postId: request.post.id) { [weak self] (result) in
+            let response = DeletionModel.Response(result: result)
+            self?.presenter.interactor(didSuccessDeletion: response)
+        } fail: { (message) in
+            self.presenter.interactor(didFailDeletion: message)
         }
     }
 }

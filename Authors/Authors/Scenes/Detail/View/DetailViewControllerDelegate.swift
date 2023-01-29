@@ -10,4 +10,6 @@ import Foundation
 protocol DetailViewControllerDelegate: AnyObject {
     func presenter(didSuccessShowDetail presenterToView: DetailModel.ViewModel)
     func presenter(didFailShowDetail message: String)
+    func presenter(didSuccessDeletion presenterToView: DeletionModel.ViewModel)
+    func presenter(didFailDeletion message: String)
 }

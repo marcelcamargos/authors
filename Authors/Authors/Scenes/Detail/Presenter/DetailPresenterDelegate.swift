@@ -10,4 +10,6 @@ import Foundation
 protocol DetailPresenterDelegate: AnyObject {
     func interactor(didSuccessShowDetail response: DetailModel.Response)
     func interactor(didFailShowDetail error: String)
+    func interactor(didSuccessDeletion response: DeletionModel.Response)
+    func interactor(didFailDeletion error: String)
 }

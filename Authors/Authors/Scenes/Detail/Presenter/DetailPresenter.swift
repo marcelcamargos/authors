@@ -33,4 +33,14 @@ extension DetailPresenter: DetailPresenterDelegate {
     func interactor(didFailShowDetail error: String) {
         viewController?.presenter(didFailShowDetail: error)
     }
+    
+    func interactor(didSuccessDeletion response: DeletionModel.Response) {
+        let presenterToView = DeletionModel.ViewModel(result: response.result)
+        
+        viewController?.presenter(didSuccessDeletion: presenterToView)
+    }
+    
+    func interactor(didFailDeletion error: String) {
+        viewController?.presenter(didFailDeletion: error)
+    }
 }

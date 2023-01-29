@@ -67,6 +67,14 @@ extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didFailShowDetail message: String) {
         
     }
+    
+    func presenter(didSuccessDeletion presenterToView: DeletionModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailDeletion message: String) {
+        
+    }
 }
 
 extension DetailViewController {
@@ -74,8 +82,9 @@ extension DetailViewController {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
         
         let yes = UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
+            let request = DeletionModel.Request(post: self.selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+            self.interactor?.processDelete(request: request)
             self.navigationController?.popToRootViewController(animated: true)
-            //self.deleteRecord()
         })
         
         let no = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in

@@ -58,6 +58,10 @@
 		101CE2182986C8ED00B7A9FC /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2172986C8ED00B7A9FC /* CommentService.swift */; };
 		101CE21A2986CA6100B7A9FC /* CommentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2192986CA6100B7A9FC /* CommentWorker.swift */; };
 		101CE21C2986CA7200B7A9FC /* CommentWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE21B2986CA7200B7A9FC /* CommentWorkerDelegate.swift */; };
+		101CE2262987060D00B7A9FC /* DeletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2252987060D00B7A9FC /* DeletionModel.swift */; };
+		101CE2282987066100B7A9FC /* PostDeletionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2272987066100B7A9FC /* PostDeletionService.swift */; };
+		101CE22A29870FE000B7A9FC /* PostDeletionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE22929870FE000B7A9FC /* PostDeletionWorker.swift */; };
+		101CE22C2987100000B7A9FC /* PostDeletionWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE22B2987100000B7A9FC /* PostDeletionWorkerDelegate.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +138,10 @@
 		101CE2172986C8ED00B7A9FC /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		101CE2192986CA6100B7A9FC /* CommentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWorker.swift; sourceTree = "<group>"; };
 		101CE21B2986CA7200B7A9FC /* CommentWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE2252987060D00B7A9FC /* DeletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletionModel.swift; sourceTree = "<group>"; };
+		101CE2272987066100B7A9FC /* PostDeletionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeletionService.swift; sourceTree = "<group>"; };
+		101CE22929870FE000B7A9FC /* PostDeletionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeletionWorker.swift; sourceTree = "<group>"; };
+		101CE22B2987100000B7A9FC /* PostDeletionWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeletionWorkerDelegate.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +352,7 @@
 				101CE1EF2985966700B7A9FC /* PostService.swift */,
 				101CE1F12985969E00B7A9FC /* UserService.swift */,
 				101CE2172986C8ED00B7A9FC /* CommentService.swift */,
+				101CE2272987066100B7A9FC /* PostDeletionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -364,6 +373,7 @@
 		101CE1B82985791100B7A9FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				101CE2252987060D00B7A9FC /* DeletionModel.swift */,
 				101CE1D129857A1400B7A9FC /* DetailModel.swift */,
 			);
 			path = Model;
@@ -372,6 +382,8 @@
 		101CE1B92985791600B7A9FC /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				101CE22B2987100000B7A9FC /* PostDeletionWorkerDelegate.swift */,
+				101CE22929870FE000B7A9FC /* PostDeletionWorker.swift */,
 				101CE1D329857A2000B7A9FC /* DetailWorker.swift */,
 				101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */,
 				101CE2192986CA6100B7A9FC /* CommentWorker.swift */,
@@ -653,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */,
+				101CE2282987066100B7A9FC /* PostDeletionService.swift in Sources */,
 				101CE1D229857A1400B7A9FC /* DetailModel.swift in Sources */,
 				101CE1FC2985A13F00B7A9FC /* DetailInteractorDelegate.swift in Sources */,
 				101CE1CE298579EE00B7A9FC /* PostPresenter.swift in Sources */,
@@ -673,6 +686,7 @@
 				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,
 				101CE1F22985969E00B7A9FC /* UserService.swift in Sources */,
+				101CE2262987060D00B7A9FC /* DeletionModel.swift in Sources */,
 				101CE20E2985FC6800B7A9FC /* Company.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
 				101CE2082985FBA400B7A9FC /* User.swift in Sources */,
@@ -688,7 +702,9 @@
 				101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */,
 				101CE21C2986CA7200B7A9FC /* CommentWorkerDelegate.swift in Sources */,
 				101CE1AA2985782900B7A9FC /* ViewCodable.swift in Sources */,
+				101CE22C2987100000B7A9FC /* PostDeletionWorkerDelegate.swift in Sources */,
 				101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */,
+				101CE22A29870FE000B7A9FC /* PostDeletionWorker.swift in Sources */,
 				101CE1DE29857A6C00B7A9FC /* DetailRouter.swift in Sources */,
 				101CE1E82985953500B7A9FC /* PostCell.swift in Sources */,
 				101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */,

@@ -38,8 +38,8 @@
 		101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */; };
 		101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */; };
 		101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */; };
-		101CE1F02985966700B7A9FC /* PostItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EF2985966700B7A9FC /* PostItemsService.swift */; };
-		101CE1F22985969E00B7A9FC /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F12985969E00B7A9FC /* DetailService.swift */; };
+		101CE1F02985966700B7A9FC /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EF2985966700B7A9FC /* PostService.swift */; };
+		101CE1F22985969E00B7A9FC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F12985969E00B7A9FC /* UserService.swift */; };
 		101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */; };
 		101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F729859F5E00B7A9FC /* DetailViewController.swift */; };
 		101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F929859FCC00B7A9FC /* DetailViewControllerDelegate.swift */; };
@@ -53,6 +53,7 @@
 		101CE20C2985FC3200B7A9FC /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE20B2985FC3200B7A9FC /* Geo.swift */; };
 		101CE20E2985FC6800B7A9FC /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE20D2985FC6800B7A9FC /* Company.swift */; };
 		101CE2122986AA3100B7A9FC /* AuthorInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2112986AA3100B7A9FC /* AuthorInformation.swift */; };
+		101CE2142986B74000B7A9FC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2132986B74000B7A9FC /* Comment.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -109,8 +110,8 @@
 		101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerDelegate.swift; sourceTree = "<group>"; };
 		101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
 		101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkerDelegate1.swift; sourceTree = "<group>"; };
-		101CE1EF2985966700B7A9FC /* PostItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemsService.swift; sourceTree = "<group>"; };
-		101CE1F12985969E00B7A9FC /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		101CE1EF2985966700B7A9FC /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		101CE1F12985969E00B7A9FC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterDelegate.swift; sourceTree = "<group>"; };
 		101CE1F729859F5E00B7A9FC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		101CE1F929859FCC00B7A9FC /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		101CE20B2985FC3200B7A9FC /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
 		101CE20D2985FC6800B7A9FC /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		101CE2112986AA3100B7A9FC /* AuthorInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorInformation.swift; sourceTree = "<group>"; };
+		101CE2132986B74000B7A9FC /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -331,8 +333,8 @@
 		101CE1B6298578FE00B7A9FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				101CE1EF2985966700B7A9FC /* PostItemsService.swift */,
-				101CE1F12985969E00B7A9FC /* DetailService.swift */,
+				101CE1EF2985966700B7A9FC /* PostService.swift */,
+				101CE1F12985969E00B7A9FC /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -345,6 +347,7 @@
 				101CE2092985FC0800B7A9FC /* Address.swift */,
 				101CE20B2985FC3200B7A9FC /* Geo.swift */,
 				101CE20D2985FC6800B7A9FC /* Company.swift */,
+				101CE2132986B74000B7A9FC /* Comment.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */,
 				101CE1C6298579BB00B7A9FC /* PostConfigurator.swift in Sources */,
 				101CE1D429857A2000B7A9FC /* DetailWorker.swift in Sources */,
+				101CE2142986B74000B7A9FC /* Comment.swift in Sources */,
 				101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */,
 				101CE1CA298579D700B7A9FC /* PostRouter.swift in Sources */,
 				101CE1792985754600B7A9FC /* AppDelegate.swift in Sources */,
@@ -655,12 +659,12 @@
 				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
 				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,
-				101CE1F22985969E00B7A9FC /* DetailService.swift in Sources */,
+				101CE1F22985969E00B7A9FC /* UserService.swift in Sources */,
 				101CE20E2985FC6800B7A9FC /* Company.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
 				101CE2082985FBA400B7A9FC /* User.swift in Sources */,
 				101CE1E0298591D400B7A9FC /* PostPresenterDelegate.swift in Sources */,
-				101CE1F02985966700B7A9FC /* PostItemsService.swift in Sources */,
+				101CE1F02985966700B7A9FC /* PostService.swift in Sources */,
 				101CE2022985CAAA00B7A9FC /* Post.swift in Sources */,
 				101CE1E6298593D800B7A9FC /* PostInternalRouterDelegate.swift in Sources */,
 				101CE1DA29857A5800B7A9FC /* DetailPresenter.swift in Sources */,

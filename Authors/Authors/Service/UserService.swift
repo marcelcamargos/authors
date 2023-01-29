@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol DetailServiceDelegate: AnyObject {
+protocol UserServiceDatasource: AnyObject {
     func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ())
 }
 
-class DetailService: DetailServiceDelegate {
+class UserService: UserServiceDatasource {
     private var posts: [Post]?
     
     func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {

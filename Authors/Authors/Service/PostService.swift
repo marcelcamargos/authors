@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PostItemsServiceDatasource: AnyObject {
+protocol PostServiceDatasource: AnyObject {
     func getSimpleListOfItems(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
 }
 
-class PostItemsService: PostItemsServiceDatasource {
+class PostService: PostServiceDatasource {
     private var posts: [Post]?
     
     func getSimpleListOfItems(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {

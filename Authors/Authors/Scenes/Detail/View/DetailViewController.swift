@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     }
     
     override func loadView() {
+        title = "Post Details"
         view = contentView
     }
     

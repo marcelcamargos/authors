@@ -8,5 +8,5 @@
 import UIKit
 
 protocol DetailInteractorDelegate: AnyObject {
-    func showDetail()
+    func showDetail(request: DetailModel.Request)
 }

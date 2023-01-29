@@ -13,6 +13,13 @@ class DetailViewController: UIViewController {
     var router: DetailInternalRouterDelegate?
     var selectedPost: Post?
     
+    var comments: [Comment] = [] {
+        didSet {
+            contentView.values = comments
+            contentView.tableView.reloadData()
+        }
+    }
+    
     init(selectedPost: Post) {
         super.init(nibName: nil, bundle: nil)
         self.selectedPost = selectedPost
@@ -29,7 +36,8 @@ class DetailViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.showDetail()
+        let request = DetailModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+        interactor?.showDetail(request: request)
     }
 }
 
@@ -45,6 +53,7 @@ extension DetailViewController: DetailViewControllerDelegate {
         guard let zipcode = author.address?.zipcode else { return }
         guard let cityName = author.address?.city else { return }
         contentView.authorAddressContentLabel.text = "Street Name: \(street), Zipcode: \(zipcode), City Name: \(cityName)"
+        comments = presenterToView.comments
     }
     
     func presenter(didFailShowDetail message: String) {

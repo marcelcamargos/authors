@@ -13,7 +13,7 @@ enum DetailModel {
     ///view -> interactor
 
     struct Request {
-        
+        let post: Post
     }
 
     //MARK: Response
@@ -21,6 +21,7 @@ enum DetailModel {
 
     struct Response {
         let users: [User]
+        let comments: [Comment]
     }
 
     //MARK: ViewModel
@@ -28,5 +29,6 @@ enum DetailModel {
 
     struct ViewModel {
         let users: [User]
+        let comments: [Comment]
     }
 }

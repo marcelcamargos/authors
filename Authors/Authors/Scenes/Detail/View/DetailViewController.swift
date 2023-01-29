@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     override func loadView() {
@@ -38,6 +38,14 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let request = DetailModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         interactor?.showDetail(request: request)
+        
+        let rightBarButton = UIBarButtonItem(title: "Delete", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.deleteItemTapped(_:)))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    @objc func deleteItemTapped(_ sender: UIBarButtonItem)
+    {
+        showDialog()
     }
 }
 
@@ -58,5 +66,25 @@ extension DetailViewController: DetailViewControllerDelegate {
     
     func presenter(didFailShowDetail message: String) {
         
+    }
+}
+
+extension DetailViewController {
+    func showDialog() {
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
+            self.navigationController?.popToRootViewController(animated: true)
+            //self.deleteRecord()
+        })
+        
+        let no = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in
+            print("Deletion not Allowed")
+        }
+        
+        dialogMessage.addAction(yes)
+        dialogMessage.addAction(no)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }

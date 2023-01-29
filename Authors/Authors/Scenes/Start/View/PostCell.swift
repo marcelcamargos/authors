@@ -15,11 +15,18 @@ final class PostCell: UITableViewCell {
         nameLabel.numberOfLines = 0
         return nameLabel
     }()
-
+    
     func setUpCell() {
-        
-        self.addSubview(nameLabel)
+        setupView()
+    }
+}
 
+extension PostCell: ViewCodable {
+    func buildHierarchy() {
+        self.addSubview(nameLabel)
+    }
+    
+    func setupConstraints() {
         nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

@@ -36,6 +36,10 @@ class PostViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         interactor?.fetchPosts(uiViewController: self)
     }
 }

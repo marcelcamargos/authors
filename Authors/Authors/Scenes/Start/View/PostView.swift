@@ -13,7 +13,7 @@ class PostView: UIView {
     weak var delegate: PostViewDelegate?
     
     public lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self

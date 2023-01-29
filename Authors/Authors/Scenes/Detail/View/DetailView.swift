@@ -128,6 +128,26 @@ class DetailView: UIView {
         return uiLabel
     }()
     
+    public lazy var commentsLabel: UILabel = {
+        let uiLabel = UILabel()
+        uiLabel.translatesAutoresizingMaskIntoConstraints = false
+        uiLabel.textColor = .black
+        uiLabel.textAlignment = .left
+        uiLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        uiLabel.text = "COMMENTS:"
+        return uiLabel
+    }()
+    
+    public lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorInset = .zero
+        tableView.allowsSelection = true
+        return tableView
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -135,6 +155,17 @@ class DetailView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let comments: [String] = ["doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in",
+                              "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor",
+                              "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque",
+                              "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus",
+                              "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis",
+                              "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in",
+                              "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor",
+                              "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque",
+                              "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus",
+                              "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"]
     
     init() {
         super.init(frame: .zero)
@@ -161,13 +192,43 @@ extension DetailView: ViewCodable {
         stackView.addArrangedSubview(authorPhoneContentLabel)
         stackView.addArrangedSubview(authorAddressLabel)
         stackView.addArrangedSubview(authorAddressContentLabel)
-
+        stackView.addArrangedSubview(commentsLabel)
         addSubview(stackView)
+        
+        addSubview(tableView)
     }
   
     func setupConstraints() {
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        
+        tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+    }
+}
+
+extension DetailView: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension DetailView: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = CommentCell()
+        cell.nameLabel.text = comments[indexPath.row]
+        cell.setUpCell()
+        return cell
     }
 }

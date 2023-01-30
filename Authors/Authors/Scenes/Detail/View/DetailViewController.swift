@@ -31,6 +31,7 @@ class DetailViewController: UIViewController {
     
     override func loadView() {
         title = "Post Details"
+        contentView.delegate = self
         view = contentView
     }
     
@@ -75,6 +76,14 @@ extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didFailDeletion message: String) {
         
     }
+    
+    func presenter(didSuccessSaveCoreData presenterToView: CoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailSaveCoreData message: String) {
+        
+    }
 }
 
 extension DetailViewController {
@@ -95,5 +104,12 @@ extension DetailViewController {
         dialogMessage.addAction(no)
         
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+}
+
+extension DetailViewController: DetailViewDelegate {
+    func defineFavourite(favourite: Bool) {
+        let request = CoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""), favourite: favourite)
+        interactor?.saveToCoreData(request: request)
     }
 }

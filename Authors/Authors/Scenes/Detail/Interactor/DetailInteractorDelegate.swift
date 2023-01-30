@@ -10,4 +10,5 @@ import UIKit
 protocol DetailInteractorDelegate: AnyObject {
     func showDetail(request: DetailModel.Request)
     func processDelete(request: DeletionModel.Request)
+    func saveToCoreData(request: CoreDataModel.Request)
 }

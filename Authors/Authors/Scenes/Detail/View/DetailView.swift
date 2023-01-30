@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol DetailViewDelegate: AnyObject {
+    func defineFavourite(favourite: Bool)
+}
+
 class DetailView: UIView {
+    
+    weak var delegate: DetailViewDelegate?
     
     var buttonState: Bool = true
     
@@ -239,8 +245,10 @@ extension DetailView {
         buttonState = !buttonState
         if buttonState {
             starButton.setImage(UIImage(systemName: "star"), for: .normal)
+            delegate?.defineFavourite(favourite: false)
         } else {
             starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            delegate?.defineFavourite(favourite: true)
         }
     }
 }

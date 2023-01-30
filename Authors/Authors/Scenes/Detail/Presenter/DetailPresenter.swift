@@ -23,7 +23,6 @@ class DetailPresenter {
 // MARK: - DetailPresenter
 
 extension DetailPresenter: DetailPresenterDelegate {
-    
     func interactor(didSuccessShowDetail response: DetailModel.Response) {
         let presenterToView = DetailModel.ViewModel(users: response.users, comments: response.comments)
         
@@ -42,5 +41,13 @@ extension DetailPresenter: DetailPresenterDelegate {
     
     func interactor(didFailDeletion error: String) {
         viewController?.presenter(didFailDeletion: error)
+    }
+    
+    func interactor(didSuccessSaveCoreData response: CoreDataModel.Response) {
+        
+    }
+    
+    func interactor(didFailSaveCoreData error: String) {
+        
     }
 }

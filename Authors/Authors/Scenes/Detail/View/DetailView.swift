@@ -8,6 +8,18 @@
 import UIKit
 
 class DetailView: UIView {
+    
+    var buttonState: Bool = true
+    
+    public lazy var starButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.setTitle("Mark as Favourite", for: .normal)
+        button.setImage(UIImage(systemName: "star"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     public lazy var postTitleLabel: UILabel = {
         let uiLabel = UILabel()
         uiLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -170,6 +182,7 @@ class DetailView: UIView {
 
 extension DetailView: ViewCodable {
     func buildHierarchy() {
+        stackView.addArrangedSubview(starButton)
         stackView.addArrangedSubview(postTitleLabel)
         stackView.addArrangedSubview(postTitleContentLabel)
         stackView.addArrangedSubview(postDescriptionLabel)
@@ -198,6 +211,10 @@ extension DetailView: ViewCodable {
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
     }
+    
+    func applyAdditionalChanges() {
+        starButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+    }
 }
 
 extension DetailView: UITableViewDataSource {
@@ -214,5 +231,16 @@ extension DetailView: UITableViewDataSource {
         cell.nameLabel.text = values[indexPath.row].body
         cell.setUpCell()
         return cell
+    }
+}
+
+extension DetailView {
+    @objc func buttonAction(sender: UIButton) {
+        buttonState = !buttonState
+        if buttonState {
+            starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
     }
 }

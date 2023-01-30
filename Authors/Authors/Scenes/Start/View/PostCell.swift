@@ -16,6 +16,13 @@ final class PostCell: UITableViewCell {
         return nameLabel
     }()
     
+    public lazy var starButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "star"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     func setUpCell() {
         setupView()
     }
@@ -24,11 +31,17 @@ final class PostCell: UITableViewCell {
 extension PostCell: ViewCodable {
     func buildHierarchy() {
         self.addSubview(nameLabel)
+        self.addSubview(starButton)
     }
     
     func setupConstraints() {
-        nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+
+        starButton.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 16).isActive = true
+        starButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
+        starButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        starButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }

@@ -44,10 +44,20 @@ extension DetailPresenter: DetailPresenterDelegate {
     }
     
     func interactor(didSuccessSaveCoreData response: CoreDataModel.Response) {
-        
+        let presenterToView = CoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessSaveCoreData: presenterToView)
     }
     
     func interactor(didFailSaveCoreData error: String) {
-        
+        viewController?.presenter(didFailSaveCoreData: error)
+    }
+    
+    func interactor(didSuccessFindCoreData response: FindCoreDataModel.Response) {
+        let presenterToView = FindCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessFindCoreData: presenterToView)
+    }
+    
+    func interactor(didFailFindCoreData error: String) {
+        viewController?.presenter(didFailFindCoreData: error)
     }
 }

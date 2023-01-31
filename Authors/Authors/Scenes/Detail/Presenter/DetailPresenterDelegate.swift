@@ -14,4 +14,6 @@ protocol DetailPresenterDelegate: AnyObject {
     func interactor(didFailDeletion error: String)
     func interactor(didSuccessSaveCoreData response: CoreDataModel.Response)
     func interactor(didFailSaveCoreData error: String)
+    func interactor(didSuccessFindCoreData response: FindCoreDataModel.Response)
+    func interactor(didFailFindCoreData error: String)
 }

@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     var interactor: DetailInteractorDelegate?
     var router: DetailInternalRouterDelegate?
     var selectedPost: Post?
+    var starState: Bool?
     
     var comments: [Comment] = [] {
         didSet {
@@ -39,6 +40,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let request = DetailModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         interactor?.showDetail(request: request)
+        
+        let findRequest = FindCoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+        interactor?.findByPost(request: findRequest)
         
         let rightBarButton = UIBarButtonItem(title: "Delete", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.deleteItemTapped(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButton
@@ -78,10 +82,28 @@ extension DetailViewController: DetailViewControllerDelegate {
     }
     
     func presenter(didSuccessSaveCoreData presenterToView: CoreDataModel.ViewModel) {
-        
+        if !presenterToView.result {
+            contentView.starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            contentView.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        contentView.buttonState = presenterToView.result
     }
     
     func presenter(didFailSaveCoreData message: String) {
+        
+    }
+    
+    func presenter(didSuccessFindCoreData presenterToView: FindCoreDataModel.ViewModel) {
+        if !presenterToView.result {
+            contentView.starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            contentView.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        contentView.buttonState = presenterToView.result
+    }
+    
+    func presenter(didFailFindCoreData message: String) {
         
     }
 }

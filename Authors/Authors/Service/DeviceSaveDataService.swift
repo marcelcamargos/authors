@@ -9,11 +9,11 @@ import UIKit
 import CoreData
 
 protocol DeviceSaveDataServiceDatasource: AnyObject {
-    func createData(post: Post, favourite: Bool, success: @escaping (String) -> (), fail: @escaping (String) -> ())
+    func createData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
 }
 
 class DeviceSaveDataService: DeviceSaveDataServiceDatasource {
-    func createData(post: Post, favourite: Bool, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
+    func createData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         guard let favouriteEntity = NSEntityDescription.entity(forEntityName: "Favourite", in: managedContext) else { return }
@@ -25,7 +25,7 @@ class DeviceSaveDataService: DeviceSaveDataServiceDatasource {
             user.setValue(post.title, forKey: "title")
             user.setValue(post.userId, forKey: "userId")
             try managedContext.save()
-            success("saved")
+            success(favourite)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
             fail("saving failed")

@@ -14,15 +14,17 @@ class DetailInteractor {
     private var commentWorker: CommentWorkerDelegate
     private var postDeletionWorker: PostDeletionWorkerDelegate
     private var deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate
+    private var deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate
     
     // MARK: - Init
     
-    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker()) {
+    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(),  _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker()) {
         self.presenter = presenter
         self.detailWorker = detailWorker
         self.commentWorker = commentWorker
         self.postDeletionWorker = postDeletionWorker
         self.deviceSaveDataWorkerDelegate = deviceSaveDataWorkerDelegate
+        self.deviceFindDataWorkerDelegate = deviceFindDataWorkerDelegate
     }
 }
 
@@ -55,8 +57,17 @@ extension DetailInteractor: DetailInteractorDelegate {
         postDeletionWorker.deletePost(postId: request.post.id) { [weak self] (result) in
             let response = DeletionModel.Response(result: result)
             self?.presenter.interactor(didSuccessDeletion: response)
-        } fail: { (message) in
-            self.presenter.interactor(didFailDeletion: message)
+        } fail: { [weak self] (message) in
+            self?.presenter.interactor(didFailDeletion: message)
+        }
+    }
+    
+    func findByPost(request: FindCoreDataModel.Request) {
+        deviceFindDataWorkerDelegate.findByPost(post: request.post) { [weak self] (favourite) in
+            let response = FindCoreDataModel.Response(result: favourite)
+            self?.presenter.interactor(didSuccessFindCoreData: response)
+        } fail: { [weak self] (message) in
+            self?.presenter.interactor(didFailFindCoreData: message)
         }
     }
 }

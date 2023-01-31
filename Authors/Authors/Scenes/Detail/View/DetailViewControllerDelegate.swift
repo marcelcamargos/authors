@@ -14,4 +14,6 @@ protocol DetailViewControllerDelegate: AnyObject {
     func presenter(didFailDeletion message: String)
     func presenter(didSuccessSaveCoreData presenterToView: CoreDataModel.ViewModel)
     func presenter(didFailSaveCoreData message: String)
+    func presenter(didSuccessFindCoreData presenterToView: FindCoreDataModel.ViewModel)
+    func presenter(didFailFindCoreData message: String)
 }

@@ -14,8 +14,7 @@ protocol DetailViewDelegate: AnyObject {
 class DetailView: UIView {
     
     weak var delegate: DetailViewDelegate?
-    
-    var buttonState: Bool = true
+    var buttonState: Bool = false
     
     public lazy var starButton: UIButton = {
         let button = UIButton(type: .system)
@@ -242,7 +241,6 @@ extension DetailView: UITableViewDataSource {
 
 extension DetailView {
     @objc func buttonAction(sender: UIButton) {
-        buttonState = !buttonState
         if buttonState {
             starButton.setImage(UIImage(systemName: "star"), for: .normal)
             delegate?.defineFavourite(favourite: false)

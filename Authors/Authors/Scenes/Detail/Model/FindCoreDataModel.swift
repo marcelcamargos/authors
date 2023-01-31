@@ -1,5 +1,5 @@
 //
-//  CoreDataModel.swift
+//  FindCoreDataModel.swift
 //  Authors
 //
 //  Created by Marcel Camargos on 30/01/23.
@@ -7,14 +7,13 @@
 
 import Foundation
 
-enum CoreDataModel {
+enum FindCoreDataModel {
 
     //MARK: Request
     ///view -> interactor
 
     struct Request {
         let post: Post
-        let favourite: Bool
     }
 
     //MARK: Response

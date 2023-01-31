@@ -52,6 +52,15 @@ class DetailViewController: UIViewController {
     {
         showDialog()
     }
+    
+    func setButtonState(result: Bool) {
+        if !result {
+            contentView.starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            contentView.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        contentView.buttonState = result
+    }
 }
 
 extension DetailViewController: DetailViewControllerDelegate {
@@ -82,12 +91,7 @@ extension DetailViewController: DetailViewControllerDelegate {
     }
     
     func presenter(didSuccessSaveCoreData presenterToView: CoreDataModel.ViewModel) {
-        if !presenterToView.result {
-            contentView.starButton.setImage(UIImage(systemName: "star"), for: .normal)
-        } else {
-            contentView.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }
-        contentView.buttonState = presenterToView.result
+        setButtonState(result: presenterToView.result)
     }
     
     func presenter(didFailSaveCoreData message: String) {
@@ -95,12 +99,7 @@ extension DetailViewController: DetailViewControllerDelegate {
     }
     
     func presenter(didSuccessFindCoreData presenterToView: FindCoreDataModel.ViewModel) {
-        if !presenterToView.result {
-            contentView.starButton.setImage(UIImage(systemName: "star"), for: .normal)
-        } else {
-            contentView.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }
-        contentView.buttonState = presenterToView.result
+        setButtonState(result: presenterToView.result)
     }
     
     func presenter(didFailFindCoreData message: String) {

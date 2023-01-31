@@ -227,7 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				101CE1B72985790300B7A9FC /* Entity */,
-				101CE1B6298578FE00B7A9FC /* Service */,
+				101CE1B6298578FE00B7A9FC /* NetworkService */,
+				101CE25F298944FB00B7A9FC /* StorageService */,
 				101CE1AB2985783E00B7A9FC /* Scenes */,
 				101CE1A82985781900B7A9FC /* Common */,
 				101CE1782985754600B7A9FC /* AppDelegate.swift */,
@@ -367,18 +368,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		101CE1B6298578FE00B7A9FC /* Service */ = {
+		101CE1B6298578FE00B7A9FC /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				101CE1EF2985966700B7A9FC /* PostService.swift */,
 				101CE1F12985969E00B7A9FC /* UserService.swift */,
 				101CE2172986C8ED00B7A9FC /* CommentService.swift */,
 				101CE2272987066100B7A9FC /* PostDeletionService.swift */,
-				101CE25329885E2800B7A9FC /* DeviceSaveDataService.swift */,
-				101CE25529886E9000B7A9FC /* DeviceUpdateDataService.swift */,
-				101CE257298874A100B7A9FC /* DeviceFindDataService.swift */,
 			);
-			path = Service;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		101CE1B72985790300B7A9FC /* Entity */ = {
@@ -467,6 +465,16 @@
 				101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		101CE25F298944FB00B7A9FC /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				101CE25329885E2800B7A9FC /* DeviceSaveDataService.swift */,
+				101CE25529886E9000B7A9FC /* DeviceUpdateDataService.swift */,
+				101CE257298874A100B7A9FC /* DeviceFindDataService.swift */,
+			);
+			path = StorageService;
 			sourceTree = "<group>";
 		};
 		2608A47E825F201D95C94E71 /* Frameworks */ = {

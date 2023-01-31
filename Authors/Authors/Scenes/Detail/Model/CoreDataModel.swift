@@ -14,7 +14,6 @@ enum CoreDataModel {
 
     struct Request {
         let post: Post
-        let favourite: Bool
     }
 
     //MARK: Response

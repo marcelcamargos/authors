@@ -60,4 +60,13 @@ extension DetailPresenter: DetailPresenterDelegate {
     func interactor(didFailFindCoreData error: String) {
         viewController?.presenter(didFailFindCoreData: error)
     }
+    
+    func interactor(didSuccessDeletionCoreData response: FindCoreDataModel.Response) {
+        let presenterToView = FindCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessDeletionCoreData: presenterToView)
+    }
+    
+    func interactor(didFailDeletionCoreData error: String) {
+        viewController?.presenter(didFailDeletionCoreData: error)
+    }
 }

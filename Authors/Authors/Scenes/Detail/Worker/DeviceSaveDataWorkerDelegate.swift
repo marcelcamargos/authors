@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeviceSaveDataWorkerDelegate {
-    func createData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
+    func createData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
 }

@@ -6,24 +6,13 @@
 //
 
 class DeviceSaveDataWorker: DeviceSaveDataWorkerDelegate {
-    func createData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
+    func createData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         let saveService = DeviceSaveDataService()
-        let updateService = DeviceUpdateDataService()
-        let deviceFindDataService = DeviceFindDataService()
-        
-        if deviceFindDataService.findByPost(post: post) == false {
-            saveService.createData(post: post, favourite: favourite) { (result) in
-                success(result)
-            } fail: { (message) in
-                fail(message)
-            }
-        } else {
-            updateService.updateData(post: post, favourite: favourite) { [weak self] (result) in
-                guard let _ = self else { return }
-                success(result)
-            } fail: { (message) in
-                fail(message)
-            }
+
+        saveService.createData(post: post) { (result) in
+            success(result)
+        } fail: { (message) in
+            fail(message)
         }
     }
 }

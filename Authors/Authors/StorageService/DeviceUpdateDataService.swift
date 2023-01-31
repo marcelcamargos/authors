@@ -17,7 +17,7 @@ class DeviceUpdateDataService: DeviceUpdateDataServiceDatasource {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Favourite")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Wishes")
         fetchRequest.predicate = NSPredicate(format: "id == %d", post.id)
         do
         {

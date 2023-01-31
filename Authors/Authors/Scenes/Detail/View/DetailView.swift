@@ -8,7 +8,8 @@
 import UIKit
 
 protocol DetailViewDelegate: AnyObject {
-    func defineFavourite(favourite: Bool)
+    func defineFavourite()
+    func deleteData(post: Post)
 }
 
 class DetailView: UIView {
@@ -173,7 +174,8 @@ class DetailView: UIView {
     }()
     
     var values: [Comment] = []
-
+    var selectedPost: Post?
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
@@ -243,10 +245,10 @@ extension DetailView {
     @objc func buttonAction(sender: UIButton) {
         if buttonState {
             starButton.setImage(UIImage(systemName: "star"), for: .normal)
-            delegate?.defineFavourite(favourite: false)
+            delegate?.deleteData(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         } else {
             starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            delegate?.defineFavourite(favourite: true)
+            delegate?.defineFavourite()
         }
     }
 }

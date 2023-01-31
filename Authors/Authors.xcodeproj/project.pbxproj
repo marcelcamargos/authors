@@ -72,6 +72,9 @@
 		101CE25A2988888000B7A9FC /* DeviceFindDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2592988888000B7A9FC /* DeviceFindDataWorker.swift */; };
 		101CE25C2988889000B7A9FC /* DeviceFindDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE25B2988889000B7A9FC /* DeviceFindDataWorkerDelegate.swift */; };
 		101CE25E29888BD100B7A9FC /* FindCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE25D29888BD100B7A9FC /* FindCoreDataModel.swift */; };
+		101CE2612989578500B7A9FC /* DeviceDeletionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2602989578500B7A9FC /* DeviceDeletionDataService.swift */; };
+		101CE26329895B1000B7A9FC /* DeviceDeletionDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE26229895B1000B7A9FC /* DeviceDeletionDataWorker.swift */; };
+		101CE26529895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE26429895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -162,6 +165,9 @@
 		101CE2592988888000B7A9FC /* DeviceFindDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindDataWorker.swift; sourceTree = "<group>"; };
 		101CE25B2988889000B7A9FC /* DeviceFindDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindDataWorkerDelegate.swift; sourceTree = "<group>"; };
 		101CE25D29888BD100B7A9FC /* FindCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCoreDataModel.swift; sourceTree = "<group>"; };
+		101CE2602989578500B7A9FC /* DeviceDeletionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeletionDataService.swift; sourceTree = "<group>"; };
+		101CE26229895B1000B7A9FC /* DeviceDeletionDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeletionDataWorker.swift; sourceTree = "<group>"; };
+		101CE26429895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeletionDataWorkerDelegate.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -416,6 +422,8 @@
 				101CE24F298825D100B7A9FC /* DeviceSaveDataWorkerDelegate.swift */,
 				101CE2592988888000B7A9FC /* DeviceFindDataWorker.swift */,
 				101CE25B2988889000B7A9FC /* DeviceFindDataWorkerDelegate.swift */,
+				101CE26229895B1000B7A9FC /* DeviceDeletionDataWorker.swift */,
+				101CE26429895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -473,6 +481,7 @@
 				101CE25329885E2800B7A9FC /* DeviceSaveDataService.swift */,
 				101CE25529886E9000B7A9FC /* DeviceUpdateDataService.swift */,
 				101CE257298874A100B7A9FC /* DeviceFindDataService.swift */,
+				101CE2602989578500B7A9FC /* DeviceDeletionDataService.swift */,
 			);
 			path = StorageService;
 			sourceTree = "<group>";
@@ -712,6 +721,7 @@
 				101CE1C8298579C600B7A9FC /* PostView.swift in Sources */,
 				101CE25A2988888000B7A9FC /* DeviceFindDataWorker.swift in Sources */,
 				101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */,
+				101CE26529895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift in Sources */,
 				101CE1C6298579BB00B7A9FC /* PostConfigurator.swift in Sources */,
 				101CE1D429857A2000B7A9FC /* DetailWorker.swift in Sources */,
 				101CE24E29881EB200B7A9FC /* DeviceSaveDataWorker.swift in Sources */,
@@ -727,6 +737,7 @@
 				101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */,
 				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
 				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
+				101CE2612989578500B7A9FC /* DeviceDeletionDataService.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,
 				101CE25E29888BD100B7A9FC /* FindCoreDataModel.swift in Sources */,
 				101CE1F22985969E00B7A9FC /* UserService.swift in Sources */,
@@ -742,6 +753,7 @@
 				101CE1DA29857A5800B7A9FC /* DetailPresenter.swift in Sources */,
 				101CE17B2985754600B7A9FC /* SceneDelegate.swift in Sources */,
 				101CE1DC29857A6300B7A9FC /* DetailInteractor.swift in Sources */,
+				101CE26329895B1000B7A9FC /* DeviceDeletionDataWorker.swift in Sources */,
 				101CE250298825D100B7A9FC /* DeviceSaveDataWorkerDelegate.swift in Sources */,
 				101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */,
 				101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */,

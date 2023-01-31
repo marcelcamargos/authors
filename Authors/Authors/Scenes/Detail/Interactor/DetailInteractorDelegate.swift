@@ -12,4 +12,5 @@ protocol DetailInteractorDelegate: AnyObject {
     func processDelete(request: DeletionModel.Request)
     func saveToCoreData(request: CoreDataModel.Request)
     func findByPost(request: FindCoreDataModel.Request)
+    func deleteData(request: FindCoreDataModel.Request)
 }

@@ -15,16 +15,18 @@ class DetailInteractor {
     private var postDeletionWorker: PostDeletionWorkerDelegate
     private var deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate
     private var deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate
+    private var deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate
     
     // MARK: - Init
     
-    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(),  _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker()) {
+    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(), _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker(), _ deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate = DeviceDeletionDataWorker()) {
         self.presenter = presenter
         self.detailWorker = detailWorker
         self.commentWorker = commentWorker
         self.postDeletionWorker = postDeletionWorker
         self.deviceSaveDataWorkerDelegate = deviceSaveDataWorkerDelegate
         self.deviceFindDataWorkerDelegate = deviceFindDataWorkerDelegate
+        self.deviceDeletionDataWorkerDelegate = deviceDeletionDataWorkerDelegate
     }
 }
 
@@ -32,7 +34,7 @@ class DetailInteractor {
 
 extension DetailInteractor: DetailInteractorDelegate {
     func saveToCoreData(request: CoreDataModel.Request) {
-        deviceSaveDataWorkerDelegate.createData(post: request.post, favourite: request.favourite) { [weak self] (result) in
+        deviceSaveDataWorkerDelegate.createData(post: request.post) { [weak self] (result) in
             let response = CoreDataModel.Response(result: result)
             self?.presenter.interactor(didSuccessSaveCoreData: response)
         } fail: { (message) in
@@ -68,6 +70,15 @@ extension DetailInteractor: DetailInteractorDelegate {
             self?.presenter.interactor(didSuccessFindCoreData: response)
         } fail: { [weak self] (message) in
             self?.presenter.interactor(didFailFindCoreData: message)
+        }
+    }
+    
+    func deleteData(request: FindCoreDataModel.Request) {
+        deviceDeletionDataWorkerDelegate.deleteData(post: request.post) { [weak self] (deleted) in
+            let response = FindCoreDataModel.Response(result: deleted)
+            self?.presenter.interactor(didSuccessDeletionCoreData: response)
+        } fail: { [weak self] (message) in
+            self?.presenter.interactor(didFailDeletionCoreData: message)
         }
     }
 }

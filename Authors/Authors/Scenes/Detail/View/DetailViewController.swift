@@ -105,6 +105,14 @@ extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didFailFindCoreData message: String) {
         
     }
+    
+    func presenter(didSuccessDeletionCoreData presenterToView: FindCoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailDeletionCoreData message: String) {
+        
+    }
 }
 
 extension DetailViewController {
@@ -129,8 +137,13 @@ extension DetailViewController {
 }
 
 extension DetailViewController: DetailViewDelegate {
-    func defineFavourite(favourite: Bool) {
-        let request = CoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""), favourite: favourite)
+    func defineFavourite() {
+        let request = CoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         interactor?.saveToCoreData(request: request)
+    }
+    
+    func deleteData(post: Post) {
+        let request = FindCoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+        interactor?.deleteData(request: request)
     }
 }

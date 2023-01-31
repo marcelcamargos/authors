@@ -9,6 +9,7 @@ import UIKit
 
 class PostView: UIView {
     var values: [Post] = []
+    var favourites: [Post] = []
     
     weak var delegate: PostViewDelegate?
     
@@ -65,7 +66,7 @@ extension PostView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = PostCell()
         cell.nameLabel.text = Extracter.shared.extactToList(posts: values)[indexPath.row]
-        cell.setUpCell()
+        cell.setUpCell(fill: Matcher.shared.match(post: values[indexPath.row], favourites: favourites))
         return cell
     }
 }

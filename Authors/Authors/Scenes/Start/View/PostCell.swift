@@ -23,8 +23,13 @@ final class PostCell: UITableViewCell {
         return button
     }()
     
-    func setUpCell() {
+    func setUpCell(fill: Bool) {
         setupView()
+        if !fill {
+            starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
     }
 }
 

@@ -19,6 +19,12 @@ class PostViewController: UIViewController {
             contentView?.tableView.reloadData()
         }
     }
+
+    var myFavourites: [Post] = [] {
+        didSet {
+            contentView?.favourites = myFavourites
+        }
+    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -47,6 +53,7 @@ class PostViewController: UIViewController {
 extension PostViewController: PostViewControllerDelegate {
     func presenter(didSuccessShowPost presenterToView: PostModel.ViewModel) {
         displayedItems = presenterToView.items
+        myFavourites = presenterToView.favourites
     }
     
     func presenter(didFailShowPost message: String) {

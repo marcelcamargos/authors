@@ -1,34 +1,32 @@
 //
-//  PostModel.swift
+//  FindAllCoreDataModel.swift
 //  Authors
 //
-//  Created by Marcel Camargos on 28/01/23.
+//  Created by Marcel Camargos on 31/01/23.
 //
 
 import Foundation
 
-enum PostModel {
+enum FindAllCoreDataModel {
 
     //MARK: Request
     ///view -> interactor
 
     struct Request {
-
+        
     }
 
     //MARK: Response
     ///interactor -> presenter
 
     struct Response {
-        var posts: [Post]
-        var favourites: [Post]
+        let wishes: [Post]
     }
 
     //MARK: ViewModel
     ///presenter -> view
 
     struct ViewModel {
-        var items: [Post]
-        var favourites: [Post]
+        let result: [Post]
     }
 }

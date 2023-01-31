@@ -39,7 +39,7 @@ class DeviceFindDataService: DeviceFindDataServiceDatasource {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Wishes")
         fetchRequest.fetchLimit =  1
         fetchRequest.predicate = NSPredicate(format: "id == %d", post.id)
         
@@ -52,22 +52,5 @@ class DeviceFindDataService: DeviceFindDataServiceDatasource {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         return false
-    }
-    
-    func findFavourites(favourite: Bool, success: @escaping ([Wishes]) -> (), fail: @escaping (String) -> ()) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favourite")
-        fetchRequest.fetchLimit =  1
-        fetchRequest.predicate = NSPredicate(format: "favourite == %@", favourite ? "true" : "false")
-        
-        do {
-            let wishes = try managedContext.fetch(fetchRequest) as? [Wishes]
-            success(wishes ?? [])
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            fail("fail")
-        }
     }
 }

@@ -12,7 +12,7 @@ class NetworkMonitorWorker: NetworkMonitorWorkerDelegate {
         
         service.startMonitoring { (state) in
             success(state)
-            
+            service.stopMonitoring()
         } fail: { (message) in
             fail(message)
         }

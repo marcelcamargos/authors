@@ -46,13 +46,13 @@ extension PostInteractor: PostInteractorDelegate {
                         guard let self = self else { return }
                         let interactorToPresenter = PostModel.Response(posts: posts, favourites: items)
                         self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
-                        
+
+                        //before saving, first clean the table content
                         self.deviceDeleteAllDataWorkerDelegate.deleteAllData() { [weak self] (deleted) in
                             guard let self = self else { return }
                             let response = DeleteAllPostCoreDataModel.Response(result: deleted)
                             self.presenter?.interactor(didSuccessDeleteAllCoreData: response)
                             
-                            //antes de fazer esse save, primeiro limpe o conteudo dessa tabela.
                             let request = StartCoreDataModel.Request(posts: posts)
                             self.saveAllToCoreData(request: request)
                             
@@ -102,8 +102,4 @@ extension PostInteractor: PostInteractorDelegate {
     func deleteAllData(request: DeleteAllPostCoreDataModel.Request) {
         
     }
-    
-//    func tryConnect(success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
-//                success(posts)
-//    }
 }

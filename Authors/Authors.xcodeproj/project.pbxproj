@@ -47,7 +47,6 @@
 		101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */; };
 		101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */; };
 		101CE2022985CAAA00B7A9FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2012985CAA900B7A9FC /* Post.swift */; };
-		101CE2042985DA4100B7A9FC /* Extracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2032985DA4100B7A9FC /* Extracter.swift */; };
 		101CE2082985FBA400B7A9FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2072985FBA400B7A9FC /* User.swift */; };
 		101CE20A2985FC0800B7A9FC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2092985FC0800B7A9FC /* Address.swift */; };
 		101CE20C2985FC3200B7A9FC /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE20B2985FC3200B7A9FC /* Geo.swift */; };
@@ -80,6 +79,7 @@
 		101CE26D2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE26C2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift */; };
 		101CE26F2989C91900B7A9FC /* FindAllCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE26E2989C91900B7A9FC /* FindAllCoreDataModel.swift */; };
 		101CE2712989DD1600B7A9FC /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2702989DD1600B7A9FC /* Matcher.swift */; };
+		101CE2732989E37400B7A9FC /* Organizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2722989E37400B7A9FC /* Organizer.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -145,7 +145,6 @@
 		101CE1FD2985A1DB00B7A9FC /* DetailWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkerDelegate.swift; sourceTree = "<group>"; };
 		101CE1FF2985A28B00B7A9FC /* DetailInternalRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInternalRouterDelegate.swift; sourceTree = "<group>"; };
 		101CE2012985CAA900B7A9FC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		101CE2032985DA4100B7A9FC /* Extracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extracter.swift; sourceTree = "<group>"; };
 		101CE2072985FBA400B7A9FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		101CE2092985FC0800B7A9FC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		101CE20B2985FC3200B7A9FC /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		101CE26C2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindAllDataWorkerDelegate.swift; sourceTree = "<group>"; };
 		101CE26E2989C91900B7A9FC /* FindAllCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAllCoreDataModel.swift; sourceTree = "<group>"; };
 		101CE2702989DD1600B7A9FC /* Matcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
+		101CE2722989E37400B7A9FC /* Organizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizer.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -354,8 +354,8 @@
 				101CE1E72985953500B7A9FC /* PostCell.swift */,
 				101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */,
 				101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */,
-				101CE2032985DA4100B7A9FC /* Extracter.swift */,
 				101CE2702989DD1600B7A9FC /* Matcher.swift */,
+				101CE2722989E37400B7A9FC /* Organizer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -749,7 +749,6 @@
 				101CE1C22985799B00B7A9FC /* PostModel.swift in Sources */,
 				101CE258298874A100B7A9FC /* DeviceFindDataService.swift in Sources */,
 				101CE26B2989C6BA00B7A9FC /* DeviceFindAllDataWorker.swift in Sources */,
-				101CE2042985DA4100B7A9FC /* Extracter.swift in Sources */,
 				101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */,
 				101CE1C4298579AA00B7A9FC /* PostWorker1.swift in Sources */,
 				101CE2712989DD1600B7A9FC /* Matcher.swift in Sources */,
@@ -793,6 +792,7 @@
 				101CE26D2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift in Sources */,
 				101CE2692989C4D600B7A9FC /* DeviceFindAllDataService.swift in Sources */,
 				101CE2162986BA7900B7A9FC /* CommentCell.swift in Sources */,
+				101CE2732989E37400B7A9FC /* Organizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

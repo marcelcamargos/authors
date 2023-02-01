@@ -7,11 +7,13 @@
 
 import Foundation
 
-class Matcher {
+protocol MatcherDelegate: AnyObject {
+    func match(post: Post, favourites: [Post]) -> Bool
+}
+
+class Matcher: MatcherDelegate {
     public static var shared = Matcher()
-    
     private init() {}
-    
     func match(post: Post, favourites: [Post]) -> Bool {
         for pst in favourites {
             if pst.id == post.id {

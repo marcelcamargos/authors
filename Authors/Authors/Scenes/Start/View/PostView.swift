@@ -65,7 +65,8 @@ extension PostView: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = PostCell()
-        cell.nameLabel.text = Extracter.shared.extactToList(posts: values)[indexPath.row]
+        Organizer.shared.organize(posts: &values, favourites: favourites)
+        cell.nameLabel.text = values[indexPath.row].title
         cell.setUpCell(fill: Matcher.shared.match(post: values[indexPath.row], favourites: favourites))
         return cell
     }

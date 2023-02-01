@@ -42,6 +42,15 @@ class PostViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let rightBarButton = UIBarButtonItem(title: "Delete All", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.deleteAllTapped(_:)))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+
+    }
+    
+    @objc func deleteAllTapped(_ sender: UIBarButtonItem)
+    {
+        showDialog()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,5 +73,27 @@ extension PostViewController: PostViewControllerDelegate {
 extension PostViewController: PostViewDelegate {
     func didClickItem(selectedPost: Post) {
         router?.showDetail(selectedPost: selectedPost)
+    }
+}
+
+extension PostViewController {
+    func showDialog() {
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete all posts except favourites? \n If you reopen the app, an internet connection will be made and the posts are going to be restored. In case you are not connected when reopening, just those posts marked as favourites will be shown for you if you have them.", preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
+            //let request = DeletionModel.Request(post: self.selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+            //self.interactor?.processDelete(request: request)
+            //self.navigationController?.popToRootViewController(animated: true)
+            print("Deletion Allowed")
+        })
+        
+        let no = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in
+            print("Deletion not Allowed")
+        }
+        
+        dialogMessage.addAction(yes)
+        dialogMessage.addAction(no)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }

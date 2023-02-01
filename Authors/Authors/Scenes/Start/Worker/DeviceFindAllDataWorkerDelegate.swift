@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeviceFindAllDataWorkerDelegate: AnyObject {
-    func findFavourites(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ())
+    func findFavourites(entityName: String, success: @escaping ([Post]) -> (), fail: @escaping (String) -> ())
 }

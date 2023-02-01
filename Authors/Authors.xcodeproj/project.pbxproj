@@ -17,7 +17,7 @@
 		101CE19C2985754700B7A9FC /* AuthorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE19B2985754700B7A9FC /* AuthorsUITestsLaunchTests.swift */; };
 		101CE1AA2985782900B7A9FC /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1A92985782900B7A9FC /* ViewCodable.swift */; };
 		101CE1C22985799B00B7A9FC /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C12985799B00B7A9FC /* PostModel.swift */; };
-		101CE1C4298579AA00B7A9FC /* PostWorker1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C3298579AA00B7A9FC /* PostWorker1.swift */; };
+		101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C3298579AA00B7A9FC /* PostWorker.swift */; };
 		101CE1C6298579BB00B7A9FC /* PostConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C5298579BB00B7A9FC /* PostConfigurator.swift */; };
 		101CE1C8298579C600B7A9FC /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C7298579C600B7A9FC /* PostView.swift */; };
 		101CE1CA298579D700B7A9FC /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1C9298579D700B7A9FC /* PostRouter.swift */; };
@@ -37,7 +37,7 @@
 		101CE1E82985953500B7A9FC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E72985953500B7A9FC /* PostCell.swift */; };
 		101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */; };
 		101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */; };
-		101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */; };
+		101CE1EE2985961A00B7A9FC /* PostWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1ED2985961A00B7A9FC /* PostWorkerDelegate.swift */; };
 		101CE1F02985966700B7A9FC /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1EF2985966700B7A9FC /* PostService.swift */; };
 		101CE1F22985969E00B7A9FC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F12985969E00B7A9FC /* UserService.swift */; };
 		101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */; };
@@ -80,6 +80,17 @@
 		101CE26F2989C91900B7A9FC /* FindAllCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE26E2989C91900B7A9FC /* FindAllCoreDataModel.swift */; };
 		101CE2712989DD1600B7A9FC /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2702989DD1600B7A9FC /* Matcher.swift */; };
 		101CE2732989E37400B7A9FC /* Organizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2722989E37400B7A9FC /* Organizer.swift */; };
+		101CE2D8298AB56C00B7A9FC /* DeviceSaveAllDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2D7298AB56C00B7A9FC /* DeviceSaveAllDataService.swift */; };
+		101CE2DA298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2D9298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift */; };
+		101CE2DC298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2DB298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift */; };
+		101CE2DE298ABB6700B7A9FC /* StartCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2DD298ABB6700B7A9FC /* StartCoreDataModel.swift */; };
+		101CE2E1298AD55D00B7A9FC /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E0298AD55D00B7A9FC /* NetworkMonitor.swift */; };
+		101CE2E3298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E2298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift */; };
+		101CE2E5298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E4298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift */; };
+		101CE2E7298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E6298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift */; };
+		101CE2E9298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E8298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift */; };
+		101CE2EB298B112C00B7A9FC /* NetworkMonitorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */; };
+		101CE2ED298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -115,7 +126,7 @@
 		101CE19B2985754700B7A9FC /* AuthorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		101CE1A92985782900B7A9FC /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		101CE1C12985799B00B7A9FC /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
-		101CE1C3298579AA00B7A9FC /* PostWorker1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorker1.swift; sourceTree = "<group>"; };
+		101CE1C3298579AA00B7A9FC /* PostWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorker.swift; sourceTree = "<group>"; };
 		101CE1C5298579BB00B7A9FC /* PostConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostConfigurator.swift; sourceTree = "<group>"; };
 		101CE1C7298579C600B7A9FC /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		101CE1C9298579D700B7A9FC /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
@@ -135,7 +146,7 @@
 		101CE1E72985953500B7A9FC /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerDelegate.swift; sourceTree = "<group>"; };
 		101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
-		101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkerDelegate1.swift; sourceTree = "<group>"; };
+		101CE1ED2985961A00B7A9FC /* PostWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkerDelegate.swift; sourceTree = "<group>"; };
 		101CE1EF2985966700B7A9FC /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		101CE1F12985969E00B7A9FC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		101CE1F529859F0E00B7A9FC /* DetailPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +189,17 @@
 		101CE26E2989C91900B7A9FC /* FindAllCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAllCoreDataModel.swift; sourceTree = "<group>"; };
 		101CE2702989DD1600B7A9FC /* Matcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
 		101CE2722989E37400B7A9FC /* Organizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizer.swift; sourceTree = "<group>"; };
+		101CE2D7298AB56C00B7A9FC /* DeviceSaveAllDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSaveAllDataService.swift; sourceTree = "<group>"; };
+		101CE2D9298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSaveAllDataWorker.swift; sourceTree = "<group>"; };
+		101CE2DB298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSaveAllDataWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE2DD298ABB6700B7A9FC /* StartCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoreDataModel.swift; sourceTree = "<group>"; };
+		101CE2E0298AD55D00B7A9FC /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		101CE2E2298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeletionAllDataService.swift; sourceTree = "<group>"; };
+		101CE2E4298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeleteAllDataWorker.swift; sourceTree = "<group>"; };
+		101CE2E6298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDeleteAllDataWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE2E8298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllPostCoreDataModel.swift; sourceTree = "<group>"; };
+		101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorWorker.swift; sourceTree = "<group>"; };
+		101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorWorkerDelegate.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE1B72985790300B7A9FC /* Entity */,
+				101CE2DF298AD46D00B7A9FC /* NetworkConnection */,
 				101CE1B6298578FE00B7A9FC /* NetworkService */,
 				101CE25F298944FB00B7A9FC /* StorageService */,
 				101CE1AB2985783E00B7A9FC /* Scenes */,
@@ -351,8 +374,8 @@
 			children = (
 				101CE1C7298579C600B7A9FC /* PostView.swift */,
 				101CE1CF29857A0600B7A9FC /* PostViewController.swift */,
-				101CE1E72985953500B7A9FC /* PostCell.swift */,
 				101CE1E92985956B00B7A9FC /* PostViewControllerDelegate.swift */,
+				101CE1E72985953500B7A9FC /* PostCell.swift */,
 				101CE1EB298595A200B7A9FC /* PostViewDelegate.swift */,
 				101CE2702989DD1600B7A9FC /* Matcher.swift */,
 				101CE2722989E37400B7A9FC /* Organizer.swift */,
@@ -371,10 +394,16 @@
 		101CE1B4298578E100B7A9FC /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				101CE1C3298579AA00B7A9FC /* PostWorker1.swift */,
-				101CE1ED2985961A00B7A9FC /* PostWorkerDelegate1.swift */,
+				101CE1C3298579AA00B7A9FC /* PostWorker.swift */,
+				101CE1ED2985961A00B7A9FC /* PostWorkerDelegate.swift */,
 				101CE26A2989C6BA00B7A9FC /* DeviceFindAllDataWorker.swift */,
 				101CE26C2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift */,
+				101CE2D9298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift */,
+				101CE2DB298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift */,
+				101CE2E4298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift */,
+				101CE2E6298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift */,
+				101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */,
+				101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -384,6 +413,8 @@
 			children = (
 				101CE1C12985799B00B7A9FC /* PostModel.swift */,
 				101CE26E2989C91900B7A9FC /* FindAllCoreDataModel.swift */,
+				101CE2DD298ABB6700B7A9FC /* StartCoreDataModel.swift */,
+				101CE2E8298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -493,12 +524,22 @@
 			isa = PBXGroup;
 			children = (
 				101CE25329885E2800B7A9FC /* DeviceSaveDataService.swift */,
+				101CE2D7298AB56C00B7A9FC /* DeviceSaveAllDataService.swift */,
 				101CE25529886E9000B7A9FC /* DeviceUpdateDataService.swift */,
 				101CE257298874A100B7A9FC /* DeviceFindDataService.swift */,
 				101CE2602989578500B7A9FC /* DeviceDeletionDataService.swift */,
 				101CE2682989C4D600B7A9FC /* DeviceFindAllDataService.swift */,
+				101CE2E2298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift */,
 			);
 			path = StorageService;
+			sourceTree = "<group>";
+		};
+		101CE2DF298AD46D00B7A9FC /* NetworkConnection */ = {
+			isa = PBXGroup;
+			children = (
+				101CE2E0298AD55D00B7A9FC /* NetworkMonitor.swift */,
+			);
+			path = NetworkConnection;
 			sourceTree = "<group>";
 		};
 		2608A47E825F201D95C94E71 /* Frameworks */ = {
@@ -726,7 +767,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101CE1EE2985961A00B7A9FC /* PostWorkerDelegate1.swift in Sources */,
+				101CE2ED298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift in Sources */,
+				101CE2DA298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift in Sources */,
+				101CE1EE2985961A00B7A9FC /* PostWorkerDelegate.swift in Sources */,
 				101CE25C2988889000B7A9FC /* DeviceFindDataWorkerDelegate.swift in Sources */,
 				101CE25629886E9000B7A9FC /* DeviceUpdateDataService.swift in Sources */,
 				101CE2282987066100B7A9FC /* PostDeletionService.swift in Sources */,
@@ -737,11 +780,13 @@
 				101CE25A2988888000B7A9FC /* DeviceFindDataWorker.swift in Sources */,
 				101CE1FA29859FCC00B7A9FC /* DetailViewControllerDelegate.swift in Sources */,
 				101CE26529895B2500B7A9FC /* DeviceDeletionDataWorkerDelegate.swift in Sources */,
+				101CE2DE298ABB6700B7A9FC /* StartCoreDataModel.swift in Sources */,
 				101CE1C6298579BB00B7A9FC /* PostConfigurator.swift in Sources */,
 				101CE1D429857A2000B7A9FC /* DetailWorker.swift in Sources */,
 				101CE24E29881EB200B7A9FC /* DeviceSaveDataWorker.swift in Sources */,
 				101CE2142986B74000B7A9FC /* Comment.swift in Sources */,
 				101CE1EC298595A200B7A9FC /* PostViewDelegate.swift in Sources */,
+				101CE2E9298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift in Sources */,
 				101CE1CA298579D700B7A9FC /* PostRouter.swift in Sources */,
 				101CE21A2986CA6100B7A9FC /* CommentWorker.swift in Sources */,
 				101CE1792985754600B7A9FC /* AppDelegate.swift in Sources */,
@@ -749,8 +794,11 @@
 				101CE1C22985799B00B7A9FC /* PostModel.swift in Sources */,
 				101CE258298874A100B7A9FC /* DeviceFindDataService.swift in Sources */,
 				101CE26B2989C6BA00B7A9FC /* DeviceFindAllDataWorker.swift in Sources */,
+				101CE2E1298AD55D00B7A9FC /* NetworkMonitor.swift in Sources */,
 				101CE1F629859F0E00B7A9FC /* DetailPresenterDelegate.swift in Sources */,
-				101CE1C4298579AA00B7A9FC /* PostWorker1.swift in Sources */,
+				101CE2E7298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift in Sources */,
+				101CE2D8298AB56C00B7A9FC /* DeviceSaveAllDataService.swift in Sources */,
+				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
 				101CE2712989DD1600B7A9FC /* Matcher.swift in Sources */,
 				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
 				101CE2612989578500B7A9FC /* DeviceDeletionDataService.swift in Sources */,
@@ -760,6 +808,7 @@
 				101CE2262987060D00B7A9FC /* DeletionModel.swift in Sources */,
 				101CE20E2985FC6800B7A9FC /* Company.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
+				101CE2E3298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift in Sources */,
 				101CE2082985FBA400B7A9FC /* User.swift in Sources */,
 				101CE1E0298591D400B7A9FC /* PostPresenterDelegate.swift in Sources */,
 				101CE1F02985966700B7A9FC /* PostService.swift in Sources */,
@@ -767,6 +816,8 @@
 				101CE2182986C8ED00B7A9FC /* CommentService.swift in Sources */,
 				101CE1E6298593D800B7A9FC /* PostInternalRouterDelegate.swift in Sources */,
 				101CE1DA29857A5800B7A9FC /* DetailPresenter.swift in Sources */,
+				101CE2EB298B112C00B7A9FC /* NetworkMonitorWorker.swift in Sources */,
+				101CE2DC298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift in Sources */,
 				101CE17B2985754600B7A9FC /* SceneDelegate.swift in Sources */,
 				101CE1DC29857A6300B7A9FC /* DetailInteractor.swift in Sources */,
 				101CE26329895B1000B7A9FC /* DeviceDeletionDataWorker.swift in Sources */,
@@ -774,6 +825,7 @@
 				101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */,
 				101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */,
 				101CE21C2986CA7200B7A9FC /* CommentWorkerDelegate.swift in Sources */,
+				101CE2E5298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift in Sources */,
 				101CE1AA2985782900B7A9FC /* ViewCodable.swift in Sources */,
 				101CE22C2987100000B7A9FC /* PostDeletionWorkerDelegate.swift in Sources */,
 				101CE1EA2985956B00B7A9FC /* PostViewControllerDelegate.swift in Sources */,

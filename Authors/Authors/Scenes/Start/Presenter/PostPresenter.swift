@@ -32,4 +32,22 @@ extension PostPresenter: PostPresenterDelegate {
     func interactor(didFailShowPost error: String) {
         viewController?.presenter(didFailShowPost: error)
     }
+    
+    func interactor(didSuccessSaveAllCoreData response: StartCoreDataModel.Response) {
+        let presenterToView = StartCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessSaveAllCoreData: presenterToView)
+    }
+    
+    func interactor(didFailSaveAllCoreData error: String) {
+        viewController?.presenter(didFailSaveAllCoreData: error)
+    }
+    
+    func interactor(didSuccessDeleteAllCoreData response: DeleteAllPostCoreDataModel.Response) {
+        let presenterToView = DeleteAllPostCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessDeleteAllCoreData: presenterToView)
+    }
+    
+    func interactor(didFailDeleteAllCoreData error: String) {
+        viewController?.presenter(didFailDeleteAllCoreData: error)
+    }
 }

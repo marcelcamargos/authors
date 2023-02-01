@@ -5,7 +5,7 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
-class PostWorker1: PostWorkerDelegate1 {
+class PostWorker: PostWorkerDelegate {
     
     func getPostList(success: @escaping ([Post]) -> (), fail:@escaping (String) -> ()) {
         let service = PostService()

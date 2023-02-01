@@ -46,6 +46,8 @@ class PostViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "Delete All", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.deleteAllTapped(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButton
 
+        //let request = CoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
+        //interactor?.saveAllToCoreData(request: request)
     }
     
     @objc func deleteAllTapped(_ sender: UIBarButtonItem)
@@ -67,6 +69,22 @@ extension PostViewController: PostViewControllerDelegate {
     
     func presenter(didFailShowPost message: String) {
         errorMessage = message
+    }
+    
+    func presenter(didSuccessSaveAllCoreData presenterToView: StartCoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailSaveAllCoreData message: String) {
+        
+    }
+    
+    func presenter(didSuccessDeleteAllCoreData presenterToView: DeleteAllPostCoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailDeleteAllCoreData message: String) {
+        
     }
 }
 

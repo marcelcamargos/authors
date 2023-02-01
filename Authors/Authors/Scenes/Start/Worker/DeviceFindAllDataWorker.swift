@@ -9,10 +9,10 @@ import Foundation
 
 class DeviceFindAllDataWorker: DeviceFindAllDataWorkerDelegate {
     
-    func findFavourites(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
+    func findFavourites(entityName: String, success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
         let service = DeviceFindAllDataService()
         
-        service.findFavourites { (items) in
+        service.findFavourites(entityName: entityName) { (items) in
             success(items)
             
         } fail: { (message) in

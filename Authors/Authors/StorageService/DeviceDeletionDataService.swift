@@ -12,7 +12,7 @@ protocol DeviceDeletionDataServiceProtocol {
     func deleteData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
 }
 
-class DeviceDeletionDataService {
+class DeviceDeletionDataService: DeviceDeletionDataServiceProtocol {
     
     func deleteData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

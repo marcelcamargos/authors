@@ -13,9 +13,7 @@ protocol PostDeletionServiceDatasource: AnyObject {
 
 class PostDeletionService: PostDeletionServiceDatasource {
     func processDeletion(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)")
-        
-        guard let url = url else { return }
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"

@@ -33,9 +33,6 @@ extension PostInteractor: PostInteractorDelegate {
 
             self.deviceFindAllDataWorkerDelegate.findFavourites { [weak self] (items) in
                 guard let self = self else { return }
-                //let interactorToPresenter2 = FindAllCoreDataModel.Response(wishes: items)
-                //edit interactorToPresenter1 according to interactorToPresenter2
-                //self?.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
                 let interactorToPresenter = PostModel.Response(posts: posts, favourites: items)
                 self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
                 

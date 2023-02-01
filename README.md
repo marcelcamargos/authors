@@ -14,10 +14,14 @@ Below are some of the implementations I made.
 5. I implemented a mechanism to favorite/unfavorite a post. Favorite posts should be at the top of the list. Favorite posts should have a filled star indicator.
 
 
+
+
 # INITIAL SCREEN
 
 
 ![image](https://user-images.githubusercontent.com/19171477/215658060-1e77f674-f71f-486c-af9f-69c5ca56533b.png)
+
+
 
 
 # DETAIL SCREEN

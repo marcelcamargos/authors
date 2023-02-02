@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Codable {
-    let id: Int?
+    let id: Int32?
     let name: String?
     let username: String?
     let email: String?
@@ -17,7 +17,7 @@ struct User: Codable {
     let website: String?
     let company: Company?
     
-    init(id: Int,
+    init(id: Int32,
          name: String,
          username: String,
          email: String,

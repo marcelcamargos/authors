@@ -20,7 +20,6 @@ protocol NetworkMonitorDelegate {
 class NetworkMonitor: NetworkMonitorDelegate {
     let monitor = NWPathMonitor()
     private var status: NWPath.Status = .requiresConnection
-    var isReachable: Bool { status == .satisfied }
     var isReachableOnCellular: Bool = true
 
     func startMonitoring(success: @escaping (ConnectionState) -> (), fail: @escaping (String) -> ()) {

@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol PostDeletionServiceDatasource: AnyObject {
-    func processDeletion(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ())
-}
-
 class PostDeletionService: PostDeletionServiceDatasource {
     func processDeletion(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)") else { return }

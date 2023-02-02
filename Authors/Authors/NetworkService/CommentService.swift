@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol CommentServiceDatasource: AnyObject {
-    func getComments(postId: Int, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ())
-}
-
 class CommentService: CommentServiceDatasource {
     func getComments(postId: Int, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)/comments")

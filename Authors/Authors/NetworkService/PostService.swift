@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol PostServiceDatasource: AnyObject {
-    func getPosts(success: @escaping([Post]) -> (), fail: @escaping(_ message: String) -> ())
-}
-
 class PostService: PostServiceDatasource {
     private var posts: [Post]?
     

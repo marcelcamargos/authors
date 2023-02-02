@@ -91,6 +91,11 @@
 		101CE2E9298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2E8298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift */; };
 		101CE2EB298B112C00B7A9FC /* NetworkMonitorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */; };
 		101CE2ED298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */; };
+		101CE2EF298B424400B7A9FC /* PostServiceDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2EE298B424400B7A9FC /* PostServiceDatasource.swift */; };
+		101CE2F1298B425F00B7A9FC /* NetworkMonitorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2F0298B425F00B7A9FC /* NetworkMonitorDelegate.swift */; };
+		101CE2F3298B427B00B7A9FC /* UserServiceDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2F2298B427B00B7A9FC /* UserServiceDatasource.swift */; };
+		101CE2F5298B429400B7A9FC /* CommentServiceDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2F4298B429400B7A9FC /* CommentServiceDatasource.swift */; };
+		101CE2F7298B42AB00B7A9FC /* PostDeletionServiceDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE2F6298B42AB00B7A9FC /* PostDeletionServiceDatasource.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -200,6 +205,11 @@
 		101CE2E8298AF1DC00B7A9FC /* DeleteAllPostCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllPostCoreDataModel.swift; sourceTree = "<group>"; };
 		101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorWorker.swift; sourceTree = "<group>"; };
 		101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE2EE298B424400B7A9FC /* PostServiceDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceDatasource.swift; sourceTree = "<group>"; };
+		101CE2F0298B425F00B7A9FC /* NetworkMonitorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorDelegate.swift; sourceTree = "<group>"; };
+		101CE2F2298B427B00B7A9FC /* UserServiceDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceDatasource.swift; sourceTree = "<group>"; };
+		101CE2F4298B429400B7A9FC /* CommentServiceDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentServiceDatasource.swift; sourceTree = "<group>"; };
+		101CE2F6298B42AB00B7A9FC /* PostDeletionServiceDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeletionServiceDatasource.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +436,10 @@
 				101CE1F12985969E00B7A9FC /* UserService.swift */,
 				101CE2172986C8ED00B7A9FC /* CommentService.swift */,
 				101CE2272987066100B7A9FC /* PostDeletionService.swift */,
+				101CE2EE298B424400B7A9FC /* PostServiceDatasource.swift */,
+				101CE2F2298B427B00B7A9FC /* UserServiceDatasource.swift */,
+				101CE2F4298B429400B7A9FC /* CommentServiceDatasource.swift */,
+				101CE2F6298B42AB00B7A9FC /* PostDeletionServiceDatasource.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -538,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				101CE2E0298AD55D00B7A9FC /* NetworkMonitor.swift */,
+				101CE2F0298B425F00B7A9FC /* NetworkMonitorDelegate.swift */,
 			);
 			path = NetworkConnection;
 			sourceTree = "<group>";
@@ -806,6 +821,8 @@
 				101CE25E29888BD100B7A9FC /* FindCoreDataModel.swift in Sources */,
 				101CE1F22985969E00B7A9FC /* UserService.swift in Sources */,
 				101CE2262987060D00B7A9FC /* DeletionModel.swift in Sources */,
+				101CE2F7298B42AB00B7A9FC /* PostDeletionServiceDatasource.swift in Sources */,
+				101CE2EF298B424400B7A9FC /* PostServiceDatasource.swift in Sources */,
 				101CE20E2985FC6800B7A9FC /* Company.swift in Sources */,
 				101CE1CC298579E400B7A9FC /* PostInteractor.swift in Sources */,
 				101CE2E3298AE9CA00B7A9FC /* DeviceDeletionAllDataService.swift in Sources */,
@@ -825,6 +842,7 @@
 				101CE2002985A28B00B7A9FC /* DetailInternalRouterDelegate.swift in Sources */,
 				101CE1E22985926700B7A9FC /* PostInteractorDelegate.swift in Sources */,
 				101CE21C2986CA7200B7A9FC /* CommentWorkerDelegate.swift in Sources */,
+				101CE2F3298B427B00B7A9FC /* UserServiceDatasource.swift in Sources */,
 				101CE2E5298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift in Sources */,
 				101CE1AA2985782900B7A9FC /* ViewCodable.swift in Sources */,
 				101CE22C2987100000B7A9FC /* PostDeletionWorkerDelegate.swift in Sources */,
@@ -833,7 +851,9 @@
 				101CE1DE29857A6C00B7A9FC /* DetailRouter.swift in Sources */,
 				101CE1E82985953500B7A9FC /* PostCell.swift in Sources */,
 				101CE1F829859F5E00B7A9FC /* DetailViewController.swift in Sources */,
+				101CE2F5298B429400B7A9FC /* CommentServiceDatasource.swift in Sources */,
 				101CE26F2989C91900B7A9FC /* FindAllCoreDataModel.swift in Sources */,
+				101CE2F1298B425F00B7A9FC /* NetworkMonitorDelegate.swift in Sources */,
 				101CE2522988285600B7A9FC /* CoreDataModel.swift in Sources */,
 				101CE1FE2985A1DB00B7A9FC /* DetailWorkerDelegate.swift in Sources */,
 				101CE1D829857A3500B7A9FC /* DetailView.swift in Sources */,

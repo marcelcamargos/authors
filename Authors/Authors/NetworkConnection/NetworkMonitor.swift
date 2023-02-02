@@ -12,11 +12,6 @@ enum ConnectionState {
     case notConnected
 }
 
-protocol NetworkMonitorDelegate {
-    func startMonitoring(success: @escaping (ConnectionState) -> (), fail: @escaping (String) -> ())
-    func stopMonitoring()
-}
-
 class NetworkMonitor: NetworkMonitorDelegate {
     let monitor = NWPathMonitor()
     private var status: NWPath.Status = .requiresConnection

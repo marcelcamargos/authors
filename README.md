@@ -17,7 +17,7 @@ Below are some of the implementations I made.
 7. I implemented offline access to post details screen.
 
 
-# I Used Clean Swift Architecture (VIP) as illustrated below
+# I Used Clean Swift Architecture (VIP) as Illustrated Below
 
 
 ![image](https://user-images.githubusercontent.com/19171477/216327968-ded1ba67-8aae-40a6-9a5b-e369ed764786.png)

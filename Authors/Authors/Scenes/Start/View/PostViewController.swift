@@ -55,7 +55,7 @@ class PostViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.showSpinner()
-        interactor?.fetchPosts(uiViewController: self)
+        interactor?.fetchPosts()
     }
 }
 
@@ -80,6 +80,7 @@ extension PostViewController: PostViewControllerDelegate {
     }
     
     func presenter(didSuccessDeleteAllCoreData presenterToView: DeleteAllPostCoreDataModel.ViewModel) {
+        interactor?.fetchPosts()
         self.removeSpinner()
     }
     
@@ -99,10 +100,10 @@ extension PostViewController {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete all posts except favourites? \n If you reopen the app, an internet connection will be made and the posts are going to be restored. In case you are not connected when reopening, just those posts marked as favourites will be shown for you if you have them.", preferredStyle: .alert)
         
         let yes = UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
-            //let request = DeletionModel.Request(post: self.selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
-            //self.interactor?.processDelete(request: request)
-            //self.navigationController?.popToRootViewController(animated: true)
-            print("Deletion Allowed")
+            self.showSpinner()
+            self.interactor?.deleteAllData()
+            self.contentView?.tableView.reloadData()
+//            print("Deletion Allowed")
         })
         
         let no = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in

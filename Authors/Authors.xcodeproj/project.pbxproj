@@ -478,8 +478,6 @@
 				101CE1ED2985961A00B7A9FC /* PostWorkerDelegate.swift */,
 				101CE26A2989C6BA00B7A9FC /* DeviceFindAllDataWorker.swift */,
 				101CE26C2989C6CB00B7A9FC /* DeviceFindAllDataWorkerDelegate.swift */,
-				101CE2D9298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift */,
-				101CE2DB298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift */,
 				101CE2E4298AED3D00B7A9FC /* DeviceDeleteAllDataWorker.swift */,
 				101CE2E6298AED5100B7A9FC /* DeviceDeleteAllDataWorkerDelegate.swift */,
 			);
@@ -661,6 +659,8 @@
 		101CE326298C88C200B7A9FC /* CommonWorker */ = {
 			isa = PBXGroup;
 			children = (
+				101CE2D9298AB84000B7A9FC /* DeviceSaveAllDataWorker.swift */,
+				101CE2DB298AB85700B7A9FC /* DeviceSaveAllDataWorkerDelegate.swift */,
 				101CE2EA298B112C00B7A9FC /* NetworkMonitorWorker.swift */,
 				101CE2EC298B11B200B7A9FC /* NetworkMonitorWorkerDelegate.swift */,
 			);

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PostInteractorDelegate: AnyObject {
-    func fetchPosts(uiViewController: UIViewController)
+    func fetchPosts()
     func saveAllToCoreData(request: StartCoreDataModel.Request)
-    func deleteAllData(request: DeleteAllPostCoreDataModel.Request)
+    func deleteAllData()
 }

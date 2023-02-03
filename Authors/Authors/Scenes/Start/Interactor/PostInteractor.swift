@@ -33,8 +33,7 @@ class PostInteractor {
 // MARK: - PostInteractor
 
 extension PostInteractor: PostInteractorDelegate {
-    func fetchPosts(uiViewController: UIViewController) {
-        
+    func fetchPosts() {
         networkMonitorWorkerDelegate.startMonitoring { [weak self] (state) in
             guard let self = self else { return }
             
@@ -99,7 +98,14 @@ extension PostInteractor: PostInteractorDelegate {
         }
     }
     
-    func deleteAllData(request: DeleteAllPostCoreDataModel.Request) {
-        
+    func deleteAllData() {
+        self.deviceDeleteAllDataWorkerDelegate.deleteAllData() { [weak self] (deleted) in
+            guard let self = self else { return }
+            let response = DeleteAllPostCoreDataModel.Response(result: deleted)
+            self.presenter?.interactor(didSuccessDeleteAllCoreData: response)
+            
+        } fail: { [weak self] (message) in
+            self?.presenter?.interactor(didFailDeleteAllCoreData: message)
+        }
     }
 }

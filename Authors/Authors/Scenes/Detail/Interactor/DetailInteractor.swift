@@ -5,6 +5,8 @@
 //  Created by Marcel Camargos on 28/01/23.
 //
 
+import UIKit
+
 class DetailInteractor {
     
     // MARK: - Private Properties
@@ -27,10 +29,11 @@ class DetailInteractor {
     private var commentAllWorkerDelegate: CommentAllWorkerDelegate
     private var deviceFindAllUserDataWorkerDelegate: DeviceFindAllUserDataWorkerDelegate
     private var deviceFindAllCommentsDataWorkerDelegate: DeviceFindAllCommentsDataWorkerDelegate
+    private var deviceSaveAllDataWorkerDelegate: DeviceSaveAllDataWorkerDelegate
     
     // MARK: - Init
     
-    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(), _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker(), _ deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate = DeviceDeletionDataWorker(), _ deviceDeletionAllGeoDataWorkerDelegate: DeviceDeletionAllGeoDataWorkerDelegate = DeviceDeletionAllGeoDataWorker(), _ deviceDeletionAllAddressDataWorkerDelegate: DeviceDeletionAllAddressDataWorkerDelegate = DeviceDeletionAllAddressDataWorker(), _ deviceDeletionAllCompanyDataWorkerDelegate: DeviceDeletionAllCompanyDataWorkerDelegate = DeviceDeletionAllCompanyDataWorker(), _ deviceDeletionAllCommentsDataWorkerDelegate: DeviceDeletionAllCommentsDataWorkerDelegate = DeviceDeletionAllCommentsDataWorker(), _ deviceDeletionAllUserDataWorkerDelegate: DeviceDeletionAllUserDataWorkerDelegate = DeviceDeletionAllUserDataWorker(), _ deviceSaveAllUserDataWorkerDelegate: DeviceSaveAllUserDataWorkerDelegate = DeviceSaveAllUserDataWorker(), _ deviceSaveAllCommentsDataWorkerDelegate: DeviceSaveAllCommentsDataWorkerDelegate = DeviceSaveAllCommentsDataWorker(), _ networkMonitorWorkerDelegate: NetworkMonitorWorkerDelegate = NetworkMonitorWorker(), _ commentAllWorkerDelegate: CommentAllWorkerDelegate = CommentAllWorker(), _ deviceFindAllUserDataWorkerDelegate: DeviceFindAllUserDataWorkerDelegate = DeviceFindAllUserDataWorker(), _ deviceFindAllCommentsDataWorkerDelegate: DeviceFindAllCommentsDataWorkerDelegate = DeviceFindAllCommentsDataWorker()) {
+    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(), _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker(), _ deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate = DeviceDeletionDataWorker(), _ deviceDeletionAllGeoDataWorkerDelegate: DeviceDeletionAllGeoDataWorkerDelegate = DeviceDeletionAllGeoDataWorker(), _ deviceDeletionAllAddressDataWorkerDelegate: DeviceDeletionAllAddressDataWorkerDelegate = DeviceDeletionAllAddressDataWorker(), _ deviceDeletionAllCompanyDataWorkerDelegate: DeviceDeletionAllCompanyDataWorkerDelegate = DeviceDeletionAllCompanyDataWorker(), _ deviceDeletionAllCommentsDataWorkerDelegate: DeviceDeletionAllCommentsDataWorkerDelegate = DeviceDeletionAllCommentsDataWorker(), _ deviceDeletionAllUserDataWorkerDelegate: DeviceDeletionAllUserDataWorkerDelegate = DeviceDeletionAllUserDataWorker(), _ deviceSaveAllUserDataWorkerDelegate: DeviceSaveAllUserDataWorkerDelegate = DeviceSaveAllUserDataWorker(), _ deviceSaveAllCommentsDataWorkerDelegate: DeviceSaveAllCommentsDataWorkerDelegate = DeviceSaveAllCommentsDataWorker(), _ networkMonitorWorkerDelegate: NetworkMonitorWorkerDelegate = NetworkMonitorWorker(), _ commentAllWorkerDelegate: CommentAllWorkerDelegate = CommentAllWorker(), _ deviceFindAllUserDataWorkerDelegate: DeviceFindAllUserDataWorkerDelegate = DeviceFindAllUserDataWorker(), _ deviceFindAllCommentsDataWorkerDelegate: DeviceFindAllCommentsDataWorkerDelegate = DeviceFindAllCommentsDataWorker(), _ deviceSaveAllDataWorkerDelegate: DeviceSaveAllDataWorkerDelegate = DeviceSaveAllDataWorker()) {
         self.presenter = presenter
         self.detailWorker = detailWorker
         self.commentWorker = commentWorker
@@ -49,6 +52,7 @@ class DetailInteractor {
         self.commentAllWorkerDelegate = commentAllWorkerDelegate
         self.deviceFindAllUserDataWorkerDelegate = deviceFindAllUserDataWorkerDelegate
         self.deviceFindAllCommentsDataWorkerDelegate = deviceFindAllCommentsDataWorkerDelegate
+        self.deviceSaveAllDataWorkerDelegate = deviceSaveAllDataWorkerDelegate
     }
 }
 
@@ -168,6 +172,28 @@ extension DetailInteractor: DetailInteractorDelegate {
         } fail: { [weak self] (message) in
             self?.presenter.interactor(didFailDeletionCoreData: message)
         }
+        
+            self.networkMonitorWorkerDelegate.startMonitoring { [weak self] (state) in
+                guard let self = self else { return }
+                
+                if ConnectionState.connected == state {
+                    
+                } else {
+                    var posts: [Post] = []
+                    posts.append(request.post)
+
+                    DispatchQueue.main.async {
+                        self.deviceSaveAllDataWorkerDelegate.createAllData(posts: posts)  { (result) in
+                            
+                        } fail: { (message) in
+                            
+                        }
+                    }
+                }
+                
+            } fail: { (message) in
+                
+            }
     }
     
     func saveAllUserToCoreData(request: DetailCoreDataModel.Request) {

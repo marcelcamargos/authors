@@ -16,8 +16,10 @@ class Organizer: OrganizerDelegate {
     private init() {}
     func organize(posts: inout [Post], favourites: [Post]) {
         for favourite in favourites {
-            if let index = posts.firstIndex(of: favourite) {
-                posts.remove(at: index)
+            if posts.contains(favourite) {
+                if let index = posts.firstIndex(of: favourite) {
+                    posts.remove(at: index)
+                }
             }
         }
         posts = favourites + posts

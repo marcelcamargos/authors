@@ -8,8 +8,8 @@
 import Foundation
 
 struct Comment: Codable {
-    let postId: Int
-    let id: Int
+    let postId: Int32
+    let id: Int32
     let name: String
     let email: String
     let body: String

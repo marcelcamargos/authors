@@ -8,7 +8,7 @@
 import Foundation
 
 class PostDeletionService: PostDeletionServiceDatasource {
-    func processDeletion(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
+    func processDeletion(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)") else { return }
         
         var request = URLRequest(url: url)

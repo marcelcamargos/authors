@@ -69,4 +69,22 @@ extension DetailPresenter: DetailPresenterDelegate {
     func interactor(didFailDeletionCoreData error: String) {
         viewController?.presenter(didFailDeletionCoreData: error)
     }
+    
+    func interactor(didSuccessSaveUsersCoreData response: DetailCoreDataModel.Response) {
+        let presenterToView = DetailCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessSaveUsersCoreData: presenterToView)
+    }
+    
+    func interactor(didFailSaveUsersCoreData error: String) {
+        viewController?.presenter(didFailSaveUsersCoreData: error)
+    }
+    
+    func interactor(didSuccessSaveCommentsCoreData response: CommentCoreDataModel.Response) {
+        let presenterToView = CommentCoreDataModel.ViewModel(result: response.result)
+        viewController?.presenter(didSuccessSaveCommentsCoreData: presenterToView)
+    }
+    
+    func interactor(didFailSaveCommentsCoreData error: String) {
+        viewController?.presenter(didFailSaveCommentsCoreData: error)
+    }
 }

@@ -23,7 +23,7 @@ class DeviceFindAllDataService: DeviceFindAllDataServiceDatasource {
                 var posts: [Post] = []
                 if let result = result as? [NSManagedObject] {
                     for data in result {
-                        let id = data.value(forKey: "id") as? Int ?? -1
+                        let id = data.value(forKey: "id") as? Int32 ?? -1
                         let userId = data.value(forKey: "userId") as? Int32 ?? -1
                         let title = data.value(forKey: "title") as? String ?? ""
                         let body = data.value(forKey: "body") as? String ?? ""

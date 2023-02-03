@@ -18,4 +18,8 @@ protocol DetailViewControllerDelegate: AnyObject {
     func presenter(didFailFindCoreData message: String)
     func presenter(didSuccessDeletionCoreData presenterToView: FindCoreDataModel.ViewModel)
     func presenter(didFailDeletionCoreData message: String)
+    func presenter(didSuccessSaveUsersCoreData: DetailCoreDataModel.ViewModel)
+    func presenter(didFailSaveUsersCoreData: String)
+    func presenter(didSuccessSaveCommentsCoreData: CommentCoreDataModel.ViewModel)
+    func presenter(didFailSaveCommentsCoreData: String)
 }

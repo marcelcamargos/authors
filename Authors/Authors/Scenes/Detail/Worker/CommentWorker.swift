@@ -9,7 +9,7 @@ import Foundation
 
 class CommentWorker: CommentWorkerDelegate {
     
-    func getComments(postId: Int, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
+    func getComments(postId: Int32, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
         let service = CommentService()
         service.getComments(postId: postId) { (comments) in
             success(comments)

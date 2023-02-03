@@ -9,7 +9,7 @@ import Foundation
 
 class PostDeletionWorker: PostDeletionWorkerDelegate {
     
-    func deletePost(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
+    func deletePost(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
         let service = PostDeletionService()
         service.processDeletion(postId: postId) { (result) in
             success(result)

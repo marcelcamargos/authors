@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostDeletionServiceDatasource: AnyObject {
-    func processDeletion(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ())
+    func processDeletion(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ())
 }

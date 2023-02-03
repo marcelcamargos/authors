@@ -113,6 +113,22 @@ extension DetailViewController: DetailViewControllerDelegate {
     func presenter(didFailDeletionCoreData message: String) {
         
     }
+    
+    func presenter(didSuccessSaveUsersCoreData: DetailCoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailSaveUsersCoreData: String) {
+        
+    }
+    
+    func presenter(didSuccessSaveCommentsCoreData: CommentCoreDataModel.ViewModel) {
+        
+    }
+    
+    func presenter(didFailSaveCommentsCoreData: String) {
+        
+    }
 }
 
 extension DetailViewController {

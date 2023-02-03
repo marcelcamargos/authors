@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CommentServiceDatasource: AnyObject {
-    func getComments(postId: Int, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ())
+    func getComments(postId: Int32, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ())
 }

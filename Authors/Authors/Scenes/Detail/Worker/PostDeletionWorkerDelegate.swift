@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostDeletionWorkerDelegate {
-    func deletePost(postId: Int, success: @escaping (String) -> (), fail: @escaping (String) -> ())
+    func deletePost(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ())
 }

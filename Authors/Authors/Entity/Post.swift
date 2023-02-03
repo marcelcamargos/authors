@@ -9,7 +9,7 @@ import Foundation
 
 struct Post: Codable, Equatable {
     let userId: Int32
-    let id: Int
+    let id: Int32
     let title: String
     let body: String
 }

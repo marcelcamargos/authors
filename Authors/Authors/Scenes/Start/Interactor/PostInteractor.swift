@@ -85,7 +85,7 @@ extension PostInteractor: PostInteractorDelegate {
                 }
             }
             
-        } fail: { [weak self] (message) in
+        } fail: { (message) in
             
         }
     }

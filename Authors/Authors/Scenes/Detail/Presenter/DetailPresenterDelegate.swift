@@ -18,4 +18,8 @@ protocol DetailPresenterDelegate: AnyObject {
     func interactor(didFailFindCoreData error: String)
     func interactor(didSuccessDeletionCoreData response: FindCoreDataModel.Response)
     func interactor(didFailDeletionCoreData error: String)
+    func interactor(didSuccessSaveUsersCoreData response: DetailCoreDataModel.Response)
+    func interactor(didFailSaveUsersCoreData error: String)
+    func interactor(didSuccessSaveCommentsCoreData response: CommentCoreDataModel.Response)
+    func interactor(didFailSaveCommentsCoreData error: String)
 }

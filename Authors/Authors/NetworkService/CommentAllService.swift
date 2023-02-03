@@ -1,21 +1,22 @@
 //
-//  CommentService.swift
+//  CommentAllService.swift
 //  Authors
 //
-//  Created by Marcel Camargos on 29/01/23.
+//  Created by Marcel Camargos on 03/02/23.
 //
 
 import Foundation
 
-class CommentService: CommentServiceDatasource {
-    func getComments(postId: Int32, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)/comments")
+class CommentAllService: CommentAllServiceDatasource {
+    
+    func getAllComments(success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
+        let url = URL(string: "https://jsonplaceholder.typicode.com/comments")
         
         guard let url = url else { return }
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
-                fail("Error with fetching comments: \(error)")
+                fail("Error with fetching users: \(error)")
                 return
             }
             

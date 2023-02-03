@@ -13,4 +13,6 @@ protocol DetailInteractorDelegate: AnyObject {
     func saveToCoreData(request: CoreDataModel.Request)
     func findByPost(request: FindCoreDataModel.Request)
     func deleteData(request: FindCoreDataModel.Request)
+    func saveAllUserToCoreData(request: DetailCoreDataModel.Request)
+    func saveAllCommentsToCoreData(request: CommentCoreDataModel.Request)
 }

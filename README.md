@@ -23,13 +23,13 @@ Below are some of the implementations I made.
 ![image](https://user-images.githubusercontent.com/19171477/216327968-ded1ba67-8aae-40a6-9a5b-e369ed764786.png)
 
 
-# INITIAL SCREEN
+# This is the initial screen I created
 
 
 ![image](https://user-images.githubusercontent.com/19171477/215658060-1e77f674-f71f-486c-af9f-69c5ca56533b.png)
 
 
-# DETAIL SCREEN
+# This is the detail screen I created
 
 
 ![image](https://user-images.githubusercontent.com/19171477/215658141-b73c7305-14a4-4f0c-9887-28112ef95e00.png)

@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.showSpinner()
         let request = DetailModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         interactor?.showDetail(request: request)
         
@@ -76,18 +77,19 @@ extension DetailViewController: DetailViewControllerDelegate {
         guard let cityName = author.address?.city else { return }
         contentView.authorAddressContentLabel.text = "Street Name: \(street), Zipcode: \(zipcode), City Name: \(cityName)"
         comments = presenterToView.comments
+        self.removeSpinner()
     }
     
     func presenter(didFailShowDetail message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessDeletion presenterToView: DeletionModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailDeletion message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessSaveCoreData presenterToView: CoreDataModel.ViewModel) {
@@ -95,7 +97,7 @@ extension DetailViewController: DetailViewControllerDelegate {
     }
     
     func presenter(didFailSaveCoreData message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessFindCoreData presenterToView: FindCoreDataModel.ViewModel) {
@@ -103,31 +105,31 @@ extension DetailViewController: DetailViewControllerDelegate {
     }
     
     func presenter(didFailFindCoreData message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessDeletionCoreData presenterToView: FindCoreDataModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailDeletionCoreData message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessSaveUsersCoreData: DetailCoreDataModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailSaveUsersCoreData: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessSaveCommentsCoreData: CommentCoreDataModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailSaveCommentsCoreData: String) {
-        
+        self.removeSpinner()
     }
 }
 

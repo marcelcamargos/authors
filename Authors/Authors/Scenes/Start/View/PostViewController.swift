@@ -45,9 +45,6 @@ class PostViewController: UIViewController {
         
         let rightBarButton = UIBarButtonItem(title: "Delete All", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.deleteAllTapped(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButton
-
-        //let request = CoreDataModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
-        //interactor?.saveAllToCoreData(request: request)
     }
     
     @objc func deleteAllTapped(_ sender: UIBarButtonItem)
@@ -57,6 +54,7 @@ class PostViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.showSpinner()
         interactor?.fetchPosts(uiViewController: self)
     }
 }
@@ -65,26 +63,28 @@ extension PostViewController: PostViewControllerDelegate {
     func presenter(didSuccessShowPost presenterToView: PostModel.ViewModel) {
         displayedItems = presenterToView.items
         myFavourites = presenterToView.favourites
+        self.removeSpinner()
     }
     
     func presenter(didFailShowPost message: String) {
         errorMessage = message
+        self.removeSpinner()
     }
     
     func presenter(didSuccessSaveAllCoreData presenterToView: StartCoreDataModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailSaveAllCoreData message: String) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didSuccessDeleteAllCoreData presenterToView: DeleteAllPostCoreDataModel.ViewModel) {
-        
+        self.removeSpinner()
     }
     
     func presenter(didFailDeleteAllCoreData message: String) {
-        
+        self.removeSpinner()
     }
 }
 

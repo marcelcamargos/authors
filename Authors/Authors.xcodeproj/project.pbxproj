@@ -129,6 +129,7 @@
 		101CE336298D542400B7A9FC /* DeviceFindAllCommentsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE335298D542400B7A9FC /* DeviceFindAllCommentsDataService.swift */; };
 		101CE338298D55AD00B7A9FC /* DeviceFindAllCommentsDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE337298D55AD00B7A9FC /* DeviceFindAllCommentsDataWorker.swift */; };
 		101CE33A298D55BE00B7A9FC /* DeviceFindAllCommentsDataWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE339298D55BE00B7A9FC /* DeviceFindAllCommentsDataWorkerDelegate.swift */; };
+		101CE33D298D671F00B7A9FC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CE33C298D671F00B7A9FC /* Util.swift */; };
 		6A095DD9926073AE5A00E80F /* Pods_AuthorsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */; };
 		C65544DB136FE4AAEAF78CDE /* Pods_Authors_AuthorsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7131D8D04F2A24EB6DBE652 /* Pods_Authors_AuthorsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -276,6 +277,7 @@
 		101CE335298D542400B7A9FC /* DeviceFindAllCommentsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindAllCommentsDataService.swift; sourceTree = "<group>"; };
 		101CE337298D55AD00B7A9FC /* DeviceFindAllCommentsDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindAllCommentsDataWorker.swift; sourceTree = "<group>"; };
 		101CE339298D55BE00B7A9FC /* DeviceFindAllCommentsDataWorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFindAllCommentsDataWorkerDelegate.swift; sourceTree = "<group>"; };
+		101CE33C298D671F00B7A9FC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		29540CFAC9E8248FD792963D /* Pods_AuthorsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECBD4CD7EF02147DC1EA021 /* Pods-Authors-AuthorsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authors-AuthorsUITests.release.xcconfig"; path = "Target Support Files/Pods-Authors-AuthorsUITests/Pods-Authors-AuthorsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C68EC3298FDD28EB29DC654 /* Pods-AuthorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorsTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorsTests/Pods-AuthorsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		101CE1772985754600B7A9FC /* Authors */ = {
 			isa = PBXGroup;
 			children = (
+				101CE33B298D670C00B7A9FC /* Util */,
 				101CE1B72985790300B7A9FC /* Entity */,
 				101CE2DF298AD46D00B7A9FC /* NetworkConnection */,
 				101CE1B6298578FE00B7A9FC /* NetworkService */,
@@ -664,6 +667,14 @@
 			path = CommonWorker;
 			sourceTree = "<group>";
 		};
+		101CE33B298D670C00B7A9FC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				101CE33C298D671F00B7A9FC /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		2608A47E825F201D95C94E71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +946,7 @@
 				101CE2D8298AB56C00B7A9FC /* DeviceSaveAllDataService.swift in Sources */,
 				101CE1C4298579AA00B7A9FC /* PostWorker.swift in Sources */,
 				101CE2712989DD1600B7A9FC /* Matcher.swift in Sources */,
+				101CE33D298D671F00B7A9FC /* Util.swift in Sources */,
 				101CE20A2985FC0800B7A9FC /* Address.swift in Sources */,
 				101CE2612989578500B7A9FC /* DeviceDeletionDataService.swift in Sources */,
 				101CE1D629857A2B00B7A9FC /* DetailConfigurator.swift in Sources */,

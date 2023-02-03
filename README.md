@@ -15,6 +15,7 @@ Below are some of the implementations I made.
 5. I implemented a mechanism to favorite/unfavorite a post. Favorite posts should be at the top of the list. Favorite posts should have a filled star indicator.
 6. I implemented offline access to posts screen.
 7. I implemented offline access to post details screen.
+8. I implemented a mechanism to remove all posts except from the favorites ones.
 
 
 # I used Clean Swift Architecture (VIP) as illustrated below

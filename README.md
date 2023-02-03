@@ -13,6 +13,8 @@ Below are some of the implementations I made.
 3. Once a Post is tapped, the user is taken to a Post Details Screen.
 4. The post details screen contains: the post title and description; the post author information; the list of comments.
 5. I implemented a mechanism to favorite/unfavorite a post. Favorite posts should be at the top of the list. Favorite posts should have a filled star indicator.
+6. I implemented offline access to posts screen.
+7. I implemented offline access to post details screen.
 
 
 # VIP ARCHITECTURE

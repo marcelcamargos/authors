@@ -26,37 +26,38 @@ final class PostDeletionWorkerTests: XCTestCase {
         super.tearDown()
     }
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     class PostDeletionServiceSpy: PostDeletionServiceDatasource {
         
         // MARK: Method call expectations
         
         var postDeletionCalled = false
         
-        // MARK: Argument expectations
-
-        var testPostId: Int32 = Seeds.Posts.post1.id
-        
         // MARK: Spied methods
         
         func processDeletion(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
             postDeletionCalled = true
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-//                if username.isEmpty, password.isEmpty {
-//                    fail("login error empty")
-//                } else {
-//                    success(self.testUserFirstName, self.testUserLastName, self.testUserGenre)
-//                }
-//            }
+            success("ok")
         }
     }
-
+    
+    func testPostDeletionWorkerShouldReturnOk() {
+        // Given
+        let serviceSpy = PostDeletionServiceSpy()
+        sut = PostDeletionWorker(serviceSpy)
+        
+        // When
+        let expect = expectation(description: "Wait for deletion to return")
+        
+        var res: String = ""
+        sut?.deletePost(postId: Seeds.Posts.post1.id, success: { result in
+            res = result
+            expect.fulfill()
+        }, fail: { (response) in
+            
+        })
+        waitForExpectations(timeout: 1.1)
+        
+        //Then
+        XCTAssertEqual(res, "ok", "result should be ok")
+    }
 }

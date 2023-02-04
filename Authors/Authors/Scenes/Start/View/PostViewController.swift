@@ -16,7 +16,6 @@ class PostViewController: UIViewController {
     var displayedItems: [Post] = [] {
         didSet {
             contentView?.values = displayedItems
-            contentView?.tableView.reloadData()
         }
     }
 
@@ -63,6 +62,7 @@ extension PostViewController: PostViewControllerDelegate {
     func presenter(didSuccessShowPost presenterToView: PostModel.ViewModel) {
         displayedItems = presenterToView.items
         myFavourites = presenterToView.favourites
+        contentView?.tableView.reloadData()
         self.removeSpinner()
     }
     
@@ -100,7 +100,7 @@ extension PostViewController: PostViewDelegate {
 
 extension PostViewController {
     func showDialog() {
-        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete all posts except favourites? \n If you reopen the app, an internet connection will be made and the posts are going to be restored. In case you are not connected when reopening, just those posts marked as favourites will be shown for you if you have them.", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete all posts except favourites? \n To do this operation, you need to be offline. If you reopen the app with an internet connection, the posts are going to be restored.", preferredStyle: .alert)
         
         let yes = UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
             self.showSpinner()

@@ -47,7 +47,7 @@ extension PostInteractor: PostInteractorDelegate {
                         self.presenter?.interactor(didSuccessShowPost: interactorToPresenter)
 
                         //before saving, first clean the table content
-//                        self.deviceDeleteAllDataWorkerDelegate.deleteAllData() { [weak self] (deleted) in
+//                        self.deviceDeleteAllDataWorkerDelegate.deleteAllData(entityName: "BackupPosts") { [weak self] (deleted) in
 //                            guard let self = self else { return }
 //                            let response = DeleteAllPostCoreDataModel.Response(result: deleted)
 //                            self.presenter?.interactor(didSuccessDeleteAllCoreData: response)

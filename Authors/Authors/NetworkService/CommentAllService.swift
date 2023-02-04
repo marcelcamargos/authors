@@ -8,13 +8,18 @@
 import Foundation
 
 class CommentAllService: CommentAllServiceDatasource {
+    private var session: URLSessionProtocol
+
+    init(withSession session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
     
     func getAllComments(success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/comments")
         
         guard let url = url else { return }
         
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 fail("Error with fetching users: \(error)")
                 return
@@ -32,7 +37,8 @@ class CommentAllService: CommentAllServiceDatasource {
                     success(comments)
                 }
             }
-        })
+        }
+        
         task.resume()
     }
 }

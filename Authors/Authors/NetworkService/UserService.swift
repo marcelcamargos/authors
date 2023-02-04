@@ -8,14 +8,18 @@
 import Foundation
 
 class UserService: UserServiceDatasource {
-    private var posts: [Post]?
+    private var session: URLSessionProtocol
+
+    init(withSession session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
     
     func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/users")
         
         guard let url = url else { return }
         
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 fail("Error with fetching users: \(error)")
                 return
@@ -33,7 +37,8 @@ class UserService: UserServiceDatasource {
                     success(users)
                 }
             }
-        })
+        }
+        
         task.resume()
     }
 }

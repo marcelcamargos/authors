@@ -8,13 +8,19 @@
 import Foundation
 
 class PostDeletionService: PostDeletionServiceDatasource {
+    private var session: URLSessionProtocol
+
+    init(withSession session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
+    
     func processDeletion(postId: Int32, success: @escaping (String) -> (), fail: @escaping (String) -> ()) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 fail("Error with post deletion: \(error)")
                 return
@@ -29,7 +35,8 @@ class PostDeletionService: PostDeletionServiceDatasource {
             DispatchQueue.main.async {
                 success("ok")
             }
-        })
+        }
+        
         task.resume()
     }
 }

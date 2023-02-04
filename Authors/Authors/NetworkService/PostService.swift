@@ -8,14 +8,18 @@
 import Foundation
 
 class PostService: PostServiceDatasource {
-    private var posts: [Post]?
+    private var session: URLSessionProtocol
+
+    init(withSession session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
     
     func getPosts(success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")
         
         guard let url = url else { return }
         
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 fail("Error with fetching posts: \(error)")
                 return
@@ -33,7 +37,8 @@ class PostService: PostServiceDatasource {
                     success(posts)
                 }
             }
-        })
+        }
+        
         task.resume()
     }
 }

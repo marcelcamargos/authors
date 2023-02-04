@@ -35,7 +35,7 @@ Also, as you can see, there is a menu called Delete All. If you are offline, you
 
 # This is the detail screen I created
 
-When you clicked the row in the last screen, you see this screen. In the top of the screen, there is an option called "Mark as Favourite". If you click that, this post becomes a favourite with a filled star.
+When you click the row in the last screen, you see the screen below. In the top of the screen, there is an option called "Mark as Favourite". If you click that, this post becomes a favourite with a filled star.
 
 In the bottom of the screen, there is a list of comments. You can scroll it if there are many comments.
 

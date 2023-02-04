@@ -27,7 +27,7 @@ Below are some of the implementations I made.
 # This is the initial screen I created
 
 
-![image](https://user-images.githubusercontent.com/19171477/215658060-1e77f674-f71f-486c-af9f-69c5ca56533b.png)
+![image](https://user-images.githubusercontent.com/19171477/216733803-9e2b604c-8406-40ab-aca8-8a327885a7a2.png)
 
 
 # This is the detail screen I created

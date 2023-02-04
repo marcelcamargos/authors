@@ -15,6 +15,7 @@ class NetworkMonitorWorker: NetworkMonitorWorkerDelegate {
             service.stopMonitoring()
         } fail: { (message) in
             fail(message)
+            service.stopMonitoring()
         }
     }
 }

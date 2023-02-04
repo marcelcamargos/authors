@@ -69,6 +69,7 @@ extension PostViewController: PostViewControllerDelegate {
     func presenter(didFailShowPost message: String) {
         errorMessage = message
         self.removeSpinner()
+        print("didFailShowPost")
     }
     
     func presenter(didSuccessSaveAllCoreData presenterToView: StartCoreDataModel.ViewModel) {
@@ -77,6 +78,7 @@ extension PostViewController: PostViewControllerDelegate {
     
     func presenter(didFailSaveAllCoreData message: String) {
         self.removeSpinner()
+        print("didFailSaveAllCoreData")
     }
     
     func presenter(didSuccessDeleteAllCoreData presenterToView: DeleteAllPostCoreDataModel.ViewModel) {
@@ -86,6 +88,7 @@ extension PostViewController: PostViewControllerDelegate {
     
     func presenter(didFailDeleteAllCoreData message: String) {
         self.removeSpinner()
+        print("didFailDeleteAllCoreData")
     }
 }
 
@@ -103,7 +106,6 @@ extension PostViewController {
             self.showSpinner()
             self.interactor?.deleteAllData()
             self.contentView?.tableView.reloadData()
-//            print("Deletion Allowed")
         })
         
         let no = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in

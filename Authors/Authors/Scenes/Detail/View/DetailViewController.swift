@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.showSpinner()
         let request = DetailModel.Request(post: selectedPost ?? Post(userId: -1, id: -1, title: "", body: ""))
         interactor?.showDetail(request: request)
         
@@ -76,10 +77,12 @@ extension DetailViewController: DetailViewControllerDelegate {
         guard let cityName = author.address?.city else { return }
         contentView.authorAddressContentLabel.text = "Street Name: \(street), Zipcode: \(zipcode), City Name: \(cityName)"
         comments = presenterToView.comments
+        navigationController?.removeSpinner()
     }
     
     func presenter(didFailShowDetail message: String) {
         print("didFailShowDetail")
+        navigationController?.removeSpinner()
     }
     
     func presenter(didSuccessDeletion presenterToView: DeletionModel.ViewModel) {

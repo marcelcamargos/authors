@@ -17,6 +17,5 @@ class DetailConfigurator {
         viewController.router = router
         viewController.interactor = interactor
         router.viewController = viewController
-        viewController.hidesBottomBarWhenPushed = true
     }
 }

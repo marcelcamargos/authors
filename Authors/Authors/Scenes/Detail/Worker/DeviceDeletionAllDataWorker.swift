@@ -1,13 +1,13 @@
 //
-//  DeviceDeleteAllDataWorker.swift
+//  DeviceDeletionAllCommentsDataWorker.swift
 //  Authors
 //
-//  Created by Marcel Camargos on 01/02/23.
+//  Created by Marcel Camargos on 02/02/23.
 //
 
 import Foundation
 
-class DeviceDeleteAllDataWorker: DeviceDeleteAllDataWorkerDelegate {
+class DeviceDeletionAllDataWorker: DeviceDeletionAllDataWorkerDelegate {
     func deleteAllData(entityName: String, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         let service = DeviceDeletionAllDataService()
         service.deleteAllData(entityName: entityName) { (deleted) in

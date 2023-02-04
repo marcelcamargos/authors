@@ -9,15 +9,15 @@ import CoreData
 import UIKit
 
 protocol DeviceDeletionAllDataServiceProtocol {
-    func deleteAllData(success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
+    func deleteAllData(entityName: String, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
 }
 
 class DeviceDeletionAllDataService: DeviceDeletionAllDataServiceProtocol {
     
-    func deleteAllData(success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
+    func deleteAllData(entityName: String, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "BackupPosts")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.returnsObjectsAsFaults = false
         do {
             let results = try managedContext.fetch(fetchRequest)

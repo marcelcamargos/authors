@@ -18,11 +18,7 @@ class DetailInteractor {
     private var deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate
     private var deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate
     private var deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate
-    private var deviceDeletionAllGeoDataWorkerDelegate: DeviceDeletionAllGeoDataWorkerDelegate
-    private var deviceDeletionAllAddressDataWorkerDelegate: DeviceDeletionAllAddressDataWorkerDelegate
-    private var deviceDeletionAllCompanyDataWorkerDelegate: DeviceDeletionAllCompanyDataWorkerDelegate
-    private var deviceDeletionAllCommentsDataWorkerDelegate: DeviceDeletionAllCommentsDataWorkerDelegate
-    private var deviceDeletionAllUserDataWorkerDelegate: DeviceDeletionAllUserDataWorkerDelegate
+    private var deviceDeletionAllDataWorkerDelegate: DeviceDeletionAllDataWorkerDelegate
     private var deviceSaveAllUserDataWorkerDelegate: DeviceSaveAllUserDataWorkerDelegate
     private var deviceSaveAllCommentsDataWorkerDelegate: DeviceSaveAllCommentsDataWorkerDelegate
     private var networkMonitorWorkerDelegate: NetworkMonitorWorkerDelegate
@@ -33,7 +29,7 @@ class DetailInteractor {
     
     // MARK: - Init
     
-    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(), _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker(), _ deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate = DeviceDeletionDataWorker(), _ deviceDeletionAllGeoDataWorkerDelegate: DeviceDeletionAllGeoDataWorkerDelegate = DeviceDeletionAllGeoDataWorker(), _ deviceDeletionAllAddressDataWorkerDelegate: DeviceDeletionAllAddressDataWorkerDelegate = DeviceDeletionAllAddressDataWorker(), _ deviceDeletionAllCompanyDataWorkerDelegate: DeviceDeletionAllCompanyDataWorkerDelegate = DeviceDeletionAllCompanyDataWorker(), _ deviceDeletionAllCommentsDataWorkerDelegate: DeviceDeletionAllCommentsDataWorkerDelegate = DeviceDeletionAllCommentsDataWorker(), _ deviceDeletionAllUserDataWorkerDelegate: DeviceDeletionAllUserDataWorkerDelegate = DeviceDeletionAllUserDataWorker(), _ deviceSaveAllUserDataWorkerDelegate: DeviceSaveAllUserDataWorkerDelegate = DeviceSaveAllUserDataWorker(), _ deviceSaveAllCommentsDataWorkerDelegate: DeviceSaveAllCommentsDataWorkerDelegate = DeviceSaveAllCommentsDataWorker(), _ networkMonitorWorkerDelegate: NetworkMonitorWorkerDelegate = NetworkMonitorWorker(), _ commentAllWorkerDelegate: CommentAllWorkerDelegate = CommentAllWorker(), _ deviceFindAllUserDataWorkerDelegate: DeviceFindAllUserDataWorkerDelegate = DeviceFindAllUserDataWorker(), _ deviceFindAllCommentsDataWorkerDelegate: DeviceFindAllCommentsDataWorkerDelegate = DeviceFindAllCommentsDataWorker(), _ deviceSaveAllDataWorkerDelegate: DeviceSaveAllDataWorkerDelegate = DeviceSaveAllDataWorker()) {
+    init(_ presenter: DetailPresenterDelegate, _ detailWorker: DetailWorkerDelegate = DetailWorker(), _ commentWorker: CommentWorkerDelegate = CommentWorker(), _ postDeletionWorker: PostDeletionWorkerDelegate = PostDeletionWorker(), _ deviceSaveDataWorkerDelegate: DeviceSaveDataWorkerDelegate = DeviceSaveDataWorker(), _ deviceFindDataWorkerDelegate: DeviceFindDataWorkerDelegate = DeviceFindDataWorker(), _ deviceDeletionDataWorkerDelegate: DeviceDeletionDataWorkerDelegate = DeviceDeletionDataWorker(), _ deviceDeletionAllDataWorkerDelegate: DeviceDeletionAllDataWorkerDelegate = DeviceDeletionAllDataWorker(), _ deviceSaveAllUserDataWorkerDelegate: DeviceSaveAllUserDataWorkerDelegate = DeviceSaveAllUserDataWorker(), _ deviceSaveAllCommentsDataWorkerDelegate: DeviceSaveAllCommentsDataWorkerDelegate = DeviceSaveAllCommentsDataWorker(), _ networkMonitorWorkerDelegate: NetworkMonitorWorkerDelegate = NetworkMonitorWorker(), _ commentAllWorkerDelegate: CommentAllWorkerDelegate = CommentAllWorker(), _ deviceFindAllUserDataWorkerDelegate: DeviceFindAllUserDataWorkerDelegate = DeviceFindAllUserDataWorker(), _ deviceFindAllCommentsDataWorkerDelegate: DeviceFindAllCommentsDataWorkerDelegate = DeviceFindAllCommentsDataWorker(), _ deviceSaveAllDataWorkerDelegate: DeviceSaveAllDataWorkerDelegate = DeviceSaveAllDataWorker()) {
         self.presenter = presenter
         self.detailWorker = detailWorker
         self.commentWorker = commentWorker
@@ -41,11 +37,7 @@ class DetailInteractor {
         self.deviceSaveDataWorkerDelegate = deviceSaveDataWorkerDelegate
         self.deviceFindDataWorkerDelegate = deviceFindDataWorkerDelegate
         self.deviceDeletionDataWorkerDelegate = deviceDeletionDataWorkerDelegate
-        self.deviceDeletionAllGeoDataWorkerDelegate = deviceDeletionAllGeoDataWorkerDelegate
-        self.deviceDeletionAllAddressDataWorkerDelegate = deviceDeletionAllAddressDataWorkerDelegate
-        self.deviceDeletionAllCompanyDataWorkerDelegate = deviceDeletionAllCompanyDataWorkerDelegate
-        self.deviceDeletionAllCommentsDataWorkerDelegate = deviceDeletionAllCommentsDataWorkerDelegate
-        self.deviceDeletionAllUserDataWorkerDelegate = deviceDeletionAllUserDataWorkerDelegate
+        self.deviceDeletionAllDataWorkerDelegate = deviceDeletionAllDataWorkerDelegate
         self.deviceSaveAllUserDataWorkerDelegate = deviceSaveAllUserDataWorkerDelegate
         self.deviceSaveAllCommentsDataWorkerDelegate = deviceSaveAllCommentsDataWorkerDelegate
         self.networkMonitorWorkerDelegate = networkMonitorWorkerDelegate
@@ -81,15 +73,15 @@ extension DetailInteractor: DetailInteractorDelegate {
                         let response = DetailModel.Response(users: users, comments: comments)
                         self?.presenter.interactor(didSuccessShowDetail: response)
                         
-                        self?.deviceDeletionAllGeoDataWorkerDelegate.deleteAllGeoData() { [weak self] (result) in
+                        self?.deviceDeletionAllDataWorkerDelegate.deleteAllData(entityName: "BackupGeo") { [weak self] (result) in
                             
-                            self?.deviceDeletionAllAddressDataWorkerDelegate.deleteAllAddressData() { [weak self] (result) in
+                            self?.deviceDeletionAllDataWorkerDelegate.deleteAllData(entityName: "BackupAddress") { [weak self] (result) in
                                 
-                                self?.deviceDeletionAllCompanyDataWorkerDelegate.deleteAllCompanyData() { [weak self] (result) in
+                                self?.deviceDeletionAllDataWorkerDelegate.deleteAllData(entityName: "BackupCompany") { [weak self] (result) in
                                     
-                                    self?.deviceDeletionAllCommentsDataWorkerDelegate.deleteAllCommentsData() { [weak self] (result) in
+                                    self?.deviceDeletionAllDataWorkerDelegate.deleteAllData(entityName: "BackupComments") { [weak self] (result) in
                                         
-                                        self?.deviceDeletionAllUserDataWorkerDelegate.deleteAllUserData() { [weak self] (result) in
+                                        self?.deviceDeletionAllDataWorkerDelegate.deleteAllData(entityName: "BackupUser") { [weak self] (result) in
                                             
                                             let request = DetailCoreDataModel.Request(users: users)
                                             self?.saveAllUserToCoreData(request: request)

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeviceDeleteAllDataWorkerDelegate {
-    func deleteAllData(success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
+    func deleteAllData(entityName: String, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
 }

@@ -26,12 +26,18 @@ Below are some of the implementations I made.
 
 # This is the initial screen I created
 
+After you start the app, this screen is shown. As you can see, some posts are marked as favourite. To mark it as favourite, you need to click the row and go to the details screen.
+
+Also, as you can see, there is a menu called Delete All. If you are offline, you can delete all records except those marked as favourites.
 
 ![image](https://user-images.githubusercontent.com/19171477/216733803-9e2b604c-8406-40ab-aca8-8a327885a7a2.png)
 
 
 # This is the detail screen I created
 
+When you clicked the row in the last screen, you see this screen. In the top of the screen, there is an option called "Mark as Favourite". If you click that, this post becomes a favourite with a filled star.
+
+In the bottom of the screen, there is a list of comments. You can scroll it if there are many comments.
 
 ![image](https://user-images.githubusercontent.com/19171477/215658141-b73c7305-14a4-4f0c-9887-28112ef95e00.png)
 

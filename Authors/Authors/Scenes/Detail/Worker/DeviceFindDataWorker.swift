@@ -8,8 +8,17 @@
 import Foundation
 
 class DeviceFindDataWorker: DeviceFindDataWorkerDelegate {
+    // MARK: - Private Properties
+
+    private var service: DeviceFindDataServiceDatasource
+    
+    // MARK: - Init
+
+    init(_ service: DeviceFindDataServiceDatasource = DeviceFindDataService()) {
+        self.service = service
+    }
+    
     func findByPost(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
-        let service = DeviceFindDataService()
         service.findByPost(post: post) { (favourite) in
             success(favourite)
         } fail: { (message) in

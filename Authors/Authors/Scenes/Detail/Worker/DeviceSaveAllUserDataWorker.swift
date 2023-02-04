@@ -8,10 +8,18 @@
 import Foundation
 
 class DeviceSaveAllUserDataWorker: DeviceSaveAllUserDataWorkerDelegate {
-    func createData(users: [User], success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
-        let saveService = DeviceSaveAllUserDataService()
+    // MARK: - Private Properties
 
-        saveService.createAllData(users: users) { (result) in
+    private var service: DeviceSaveAllUserDataServiceDatasource
+    
+    // MARK: - Init
+
+    init(_ service: DeviceSaveAllUserDataServiceDatasource = DeviceSaveAllUserDataService()) {
+        self.service = service
+    }
+    
+    func createData(users: [User], success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
+        service.createAllData(users: users) { (result) in
             success(result)
         } fail: { (message) in
             fail(message)

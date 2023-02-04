@@ -8,8 +8,17 @@
 import Foundation
 
 class DeviceDeletionAllDataWorker: DeviceDeletionAllDataWorkerDelegate {
+    // MARK: - Private Properties
+
+    private var service: DeviceDeletionAllDataServiceProtocol
+    
+    // MARK: - Init
+
+    init(_ service: DeviceDeletionAllDataServiceProtocol = DeviceDeletionAllDataService()) {
+        self.service = service
+    }
+    
     func deleteAllData(entityName: String, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
-        let service = DeviceDeletionAllDataService()
         service.deleteAllData(entityName: entityName) { (deleted) in
             success(deleted)
         } fail: { (message) in

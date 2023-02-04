@@ -9,9 +9,17 @@ import Foundation
 
 class DeviceFindAllDataWorker: DeviceFindAllDataWorkerDelegate {
     
+    // MARK: - Private Properties
+
+    private var service: DeviceFindAllDataServiceDatasource
+    
+    // MARK: - Init
+
+    init(_ service: DeviceFindAllDataServiceDatasource = DeviceFindAllDataService()) {
+        self.service = service
+    }
+
     func findFavourites(entityName: String, success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
-        let service = DeviceFindAllDataService()
-        
         service.findFavourites(entityName: entityName) { (items) in
             success(items)
             

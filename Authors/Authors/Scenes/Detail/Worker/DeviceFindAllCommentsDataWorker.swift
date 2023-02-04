@@ -8,9 +8,17 @@
 import Foundation
 
 class DeviceFindAllCommentsDataWorker: DeviceFindAllCommentsDataWorkerDelegate {
+    // MARK: - Private Properties
+
+    private var service: DeviceFindAllCommentsDataServiceDatasource
     
+    // MARK: - Init
+
+    init(_ service: DeviceFindAllCommentsDataServiceDatasource = DeviceFindAllCommentsDataService()) {
+        self.service = service
+    }
+
     func findAllCommentsData(post: Post, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
-        let service = DeviceFindAllCommentsDataService()
         service.findAllComments(post: post) { (comments) in
             success(comments)
         } fail: { (message) in

@@ -9,8 +9,17 @@ import Foundation
 
 class DetailWorker: DetailWorkerDelegate {
     
+    // MARK: - Private Properties
+
+    private var service: UserServiceDatasource
+    
+    // MARK: - Init
+
+    init(_ service: UserServiceDatasource = UserService()) {
+        self.service = service
+    }
+    
     func getDetail(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {
-        let service = UserService()
         service.getDetail { (users) in
             success(users)
         } fail: { (message) in

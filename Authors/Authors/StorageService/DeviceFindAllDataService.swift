@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 
-protocol DeviceFindAllDataServiceDatasource {
-    func findFavourites(entityName: String, success: @escaping ([Post]) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceFindAllDataService: DeviceFindAllDataServiceDatasource {
     func findFavourites(entityName: String, success: @escaping ([Post]) -> (), fail: @escaping (String) -> ()) {
         DispatchQueue.main.async {

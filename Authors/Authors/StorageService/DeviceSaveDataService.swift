@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 
-protocol DeviceSaveDataServiceDatasource: AnyObject {
-    func createData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceSaveDataService: DeviceSaveDataServiceDatasource {
     func createData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

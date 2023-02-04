@@ -8,11 +8,6 @@
 import UIKit
 import CoreData
 
-protocol DeviceFindDataServiceDatasource {
-    func findByPost(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
-    func findByPost(post: Post) -> Bool
-}
-
 class DeviceFindDataService: DeviceFindDataServiceDatasource {
     func findByPost(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

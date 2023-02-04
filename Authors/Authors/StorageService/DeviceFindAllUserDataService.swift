@@ -8,10 +8,6 @@
 import CoreData
 import UIKit
 
-protocol DeviceFindAllUserDataServiceProtocol {
-    func findAllUserData(success: @escaping ([User]) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceFindAllUserDataService: DeviceFindAllUserDataServiceProtocol {
     
     func findAllUserData(success: @escaping ([User]) -> (), fail: @escaping (String) -> ()) {

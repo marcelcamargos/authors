@@ -8,11 +8,7 @@
 import UIKit
 import CoreData
 
-protocol DeviceSaveAllCommentsDetailDataServiceDatasource: AnyObject {
-    func createAllData(comments: [Comment], success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
-}
-
-class DeviceSaveAllCommentsDataService: DeviceSaveAllCommentsDetailDataServiceDatasource {
+class DeviceSaveAllCommentsDataService: DeviceSaveAllCommentsDataServiceDatasource {
     func createAllData(comments: [Comment], success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext

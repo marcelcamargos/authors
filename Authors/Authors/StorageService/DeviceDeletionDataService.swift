@@ -8,10 +8,6 @@
 import CoreData
 import UIKit
 
-protocol DeviceDeletionDataServiceProtocol {
-    func deleteData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceDeletionDataService: DeviceDeletionDataServiceProtocol {
     
     func deleteData(post: Post, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {

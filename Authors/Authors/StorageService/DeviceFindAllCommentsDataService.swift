@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 
-protocol DeviceFindAllCommentsDataServiceDatasource {
-    func findAllComments(post: Post, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceFindAllCommentsDataService: DeviceFindAllCommentsDataServiceDatasource {
     func findAllComments(post: Post, success: @escaping ([Comment]) -> (), fail: @escaping (String) -> ()) {
         DispatchQueue.main.async {

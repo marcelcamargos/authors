@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 
-protocol DeviceUpdateDataServiceDatasource {
-    func updateData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ())
-}
-
 class DeviceUpdateDataService: DeviceUpdateDataServiceDatasource {
     func updateData(post: Post, favourite: Bool, success: @escaping (Bool) -> (), fail: @escaping (String) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

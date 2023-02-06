@@ -1,4 +1,8 @@
-# Authors
+# Author
+
+Marcel Gonçalves Viana Marins de Camargos
+
+# Short explanation
 
 Implementations are based on this API: https://jsonplaceholder.typicode.com
 
